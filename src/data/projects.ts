@@ -92,6 +92,35 @@ export const projects: Project[] = [
     year: 2023,
   },
   {
+    id: "portfolio",
+    name: "This Portfolio",
+    tagline: "Personal portfolio — designed, built and deployed by me",
+    description:
+      "Full-stack portfolio built from scratch to showcase my work and attract remote opportunities. Designed with a custom dark theme, animated sections, contact form with email delivery, and full SEO configuration.",
+    problem:
+      "I needed a professional online presence that communicated not just my skills, but my ability to deliver complete systems — from design to production deploy.",
+    role: "Everything: design decisions, architecture, frontend, API, SEO and deploy.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Resend"],
+    highlights: [
+      "Custom dark amber theme built with Tailwind CSS v4",
+      "Animated sections with Framer Motion",
+      "Contact form with email delivery via Resend API",
+      "Full SEO — metadata, Open Graph, Schema.org, sitemap",
+      "Deployed on Vercel with CI/CD via GitHub",
+    ],
+    images: {
+      thumbnail: "/images/projects/portfolio/thumbnail.png",
+      screenshots: [],
+    },
+    links: {
+      demo: "https://portifolio-neon-kappa.vercel.app",
+      github: "https://github.com/NadirFernanda/Portifolio",
+    },
+    status: "production",
+    featured: true,
+    year: 2025,
+  },
+  {
     id: "ispbie-billing",
     name: "ISP BIE — Billing System",
     tagline: "Invoice & billing management for an internet provider",

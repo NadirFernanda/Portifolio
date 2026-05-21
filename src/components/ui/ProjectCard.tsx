@@ -10,19 +10,21 @@ function GithubIcon({ className }: { className?: string }) {
 }
 
 const projectGradients: Record<string, string> = {
-  medfreela:           "from-rose-900/60 via-surface-card to-surface-card",
-  angolawifi:          "from-amber-900/60 via-surface-card to-surface-card",
-  "isp-bie":           "from-orange-900/60 via-surface-card to-surface-card",
-  "ispbie-billing":    "from-sky-900/60 via-surface-card to-surface-card",
+  medfreela:               "from-rose-900/60 via-surface-card to-surface-card",
+  angolawifi:              "from-amber-900/60 via-surface-card to-surface-card",
+  "isp-bie":               "from-orange-900/60 via-surface-card to-surface-card",
+  "ispbie-billing":        "from-sky-900/60 via-surface-card to-surface-card",
   "angolawifi-management": "from-violet-900/60 via-surface-card to-surface-card",
+  portfolio:               "from-emerald-900/60 via-surface-card to-surface-card",
 };
 
 const projectAccent: Record<string, string> = {
-  medfreela:           "#FB7185",
-  angolawifi:          "#F59E0B",
-  "isp-bie":           "#FB923C",
-  "ispbie-billing":    "#38BDF8",
+  medfreela:               "#FB7185",
+  angolawifi:              "#F59E0B",
+  "isp-bie":               "#FB923C",
+  "ispbie-billing":        "#38BDF8",
   "angolawifi-management": "#A78BFA",
+  portfolio:               "#10B981",
 };
 
 interface ProjectCardProps {
