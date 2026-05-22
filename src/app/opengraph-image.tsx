@@ -17,7 +17,6 @@ export default function Image() {
           justifyContent: "center",
           padding: "80px",
           fontFamily: "system-ui, sans-serif",
-          position: "relative",
         }}
       >
         {/* Amber top bar */}
@@ -29,19 +28,6 @@ export default function Image() {
             right: 0,
             height: "5px",
             background: "#F59E0B",
-          }}
-        />
-
-        {/* Glow orb top-right */}
-        <div
-          style={{
-            position: "absolute",
-            right: "-80px",
-            top: "-80px",
-            width: "520px",
-            height: "520px",
-            borderRadius: "50%",
-            background: "radial-gradient(circle, #F59E0B18 0%, transparent 65%)",
           }}
         />
 
@@ -59,12 +45,12 @@ export default function Image() {
           Fernanda Gonçalves
         </div>
 
-        {/* Title pill */}
+        {/* Title */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "10px",
+            gap: "12px",
             marginBottom: "36px",
           }}
         >
@@ -81,7 +67,6 @@ export default function Image() {
               fontSize: "34px",
               fontWeight: 500,
               color: "#F59E0B",
-              letterSpacing: "0.5px",
             }}
           >
             Software Engineer
@@ -101,7 +86,7 @@ export default function Image() {
           architecture to production deploy.
         </div>
 
-        {/* Bottom URL */}
+        {/* URL */}
         <div
           style={{
             position: "absolute",
@@ -109,8 +94,6 @@ export default function Image() {
             left: "80px",
             fontSize: "18px",
             color: "#444444",
-            fontFamily: "monospace",
-            letterSpacing: "0.5px",
           }}
         >
           fernandagoncalves.dev
