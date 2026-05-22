@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ExternalLink, LockKeyhole } from "lucide-react";
 import type { Project } from "@/types";
 
@@ -38,40 +39,51 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article className="group flex flex-col h-full rounded-2xl border border-border bg-surface-card overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
 
-      {/* Visual placeholder */}
-      <div className={`relative h-52 bg-gradient-to-br ${gradient} overflow-hidden flex items-center justify-center`}>
+      {/* Thumbnail */}
+      <div className={`relative h-52 overflow-hidden ${project.images.thumbnail ? "bg-surface-card" : `bg-gradient-to-br ${gradient} flex items-center justify-center`}`}>
 
-        {/* Background grid pattern */}
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `linear-gradient(${accent}44 1px, transparent 1px), linear-gradient(90deg, ${accent}44 1px, transparent 1px)`,
-            backgroundSize: "28px 28px",
-          }}
-        />
-
-        {/* Glow orb */}
-        <div
-          className="absolute top-4 left-6 w-24 h-24 rounded-full blur-2xl opacity-30"
-          style={{ backgroundColor: accent }}
-        />
-
-        {/* Project initials */}
-        <span
-          className="relative z-10 text-6xl font-black tracking-tighter opacity-20 select-none"
-          style={{ color: accent }}
-        >
-          {project.name.slice(0, 2).toUpperCase()}
-        </span>
+        {project.images.thumbnail ? (
+          <>
+            <Image
+              src={project.images.thumbnail}
+              alt={`${project.name} screenshot`}
+              fill
+              className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+            {/* subtle gradient overlay so badges are readable */}
+            <div className="absolute inset-0 bg-gradient-to-t from-surface-card/60 via-transparent to-transparent" />
+          </>
+        ) : (
+          <>
+            <div
+              className="absolute inset-0 opacity-10"
+              style={{
+                backgroundImage: `linear-gradient(${accent}44 1px, transparent 1px), linear-gradient(90deg, ${accent}44 1px, transparent 1px)`,
+                backgroundSize: "28px 28px",
+              }}
+            />
+            <div
+              className="absolute top-4 left-6 w-24 h-24 rounded-full blur-2xl opacity-30"
+              style={{ backgroundColor: accent }}
+            />
+            <span
+              className="relative z-10 text-6xl font-black tracking-tighter opacity-20 select-none"
+              style={{ color: accent }}
+            >
+              {project.name.slice(0, 2).toUpperCase()}
+            </span>
+          </>
+        )}
 
         {/* Year badge */}
-        <span className="absolute top-3 right-3 text-xs font-mono bg-surface/70 backdrop-blur-sm px-2 py-1 rounded-md border border-border text-muted">
+        <span className="absolute top-3 right-3 z-10 text-xs font-mono bg-surface/70 backdrop-blur-sm px-2 py-1 rounded-md border border-border text-muted">
           {project.year}
         </span>
 
         {/* Status badge */}
         {project.status === "production" && (
-          <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 text-xs font-medium px-2 py-1 rounded-full bg-surface/70 backdrop-blur-sm border border-border" style={{ color: accent }}>
+          <span className="absolute bottom-3 left-3 z-10 inline-flex items-center gap-1.5 text-xs font-medium px-2 py-1 rounded-full bg-surface/70 backdrop-blur-sm border border-border" style={{ color: accent }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse inline-block" style={{ backgroundColor: accent }} />
             Live
           </span>

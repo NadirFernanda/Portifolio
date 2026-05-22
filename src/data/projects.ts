@@ -21,10 +21,8 @@ export const projects: Project[] = [
       "Performance-optimized database queries",
     ],
     images: {
-      thumbnail: "/images/projects/medfreela/thumbnail.png",
-      screenshots: [
-        "/images/projects/medfreela/thumbnail.png",
-      ],
+      thumbnail: "/images/projects/medfreela/medfreela.ao_.png",
+      screenshots: ["/images/projects/medfreela/medfreela.ao_.png"],
     },
     links: {
       demo: "https://medfreela.ao",
@@ -50,10 +48,8 @@ export const projects: Project[] = [
       "Optimized for fast loading on low-bandwidth connections",
     ],
     images: {
-      thumbnail: "/images/projects/angolawifi/thumbnail.png",
-      screenshots: [
-        "/images/projects/angolawifi/thumbnail.png",
-      ],
+      thumbnail: "/images/projects/angolawifi/angolawifi.ao_pagar-plano-gpo_7.png",
+      screenshots: ["/images/projects/angolawifi/angolawifi.ao_pagar-plano-gpo_7.png"],
     },
     links: {
       demo: "https://angolawifi.ao",
@@ -79,10 +75,8 @@ export const projects: Project[] = [
       "Production deployment on Linux server",
     ],
     images: {
-      thumbnail: "/images/projects/ispbie/thumbnail.png",
-      screenshots: [
-        "/images/projects/ispbie/thumbnail.png",
-      ],
+      thumbnail: "/images/projects/ispbie/screenshot.png",
+      screenshots: ["/images/projects/ispbie/screenshot.png"],
     },
     links: {
       demo: "https://isp-bie.ao",
@@ -109,8 +103,8 @@ export const projects: Project[] = [
       "Deployed on Vercel with CI/CD via GitHub",
     ],
     images: {
-      thumbnail: "/images/projects/portfolio/thumbnail.png",
-      screenshots: [],
+      thumbnail: "/images/projects/portfolio/screenshot.png",
+      screenshots: ["/images/projects/portfolio/screenshot.png"],
     },
     links: {
       demo: "https://portifolio-neon-kappa.vercel.app",
@@ -138,8 +132,8 @@ export const projects: Project[] = [
       "Role-based access for staff",
     ],
     images: {
-      thumbnail: "/images/projects/ispbie-billing/thumbnail.png",
-      screenshots: [],
+      thumbnail: "/images/projects/ispbie-billing/screenshot.png",
+      screenshots: ["/images/projects/ispbie-billing/screenshot.png"],
     },
     links: {},
     status: "production",
@@ -164,8 +158,8 @@ export const projects: Project[] = [
       "Multi-user access with role permissions",
     ],
     images: {
-      thumbnail: "/images/projects/angolawifi-management/thumbnail.png",
-      screenshots: [],
+      thumbnail: "/images/projects/angolawifi-management/screenshot.png",
+      screenshots: ["/images/projects/angolawifi-management/screenshot.png"],
     },
     links: {},
     status: "production",
