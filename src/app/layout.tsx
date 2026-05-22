@@ -13,8 +13,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "https://fernandagoncalves.dev";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fernandagoncalves.dev"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Fernanda Gonçalves | Software Engineer",
     template: "%s | Fernanda Gonçalves",
