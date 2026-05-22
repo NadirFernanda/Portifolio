@@ -30,6 +30,11 @@ const nextConfig: NextConfig = {
         destination: "/cv/fernanda-goncalves-cv.pdf",
         permanent: false,
       },
+      {
+        source: "/p",
+        destination: "/",
+        permanent: false,
+      },
     ];
   },
 };
