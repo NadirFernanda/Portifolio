@@ -30,9 +30,10 @@ const projectAccent: Record<string, string> = {
 
 interface ProjectCardProps {
   project: Project;
+  priority?: boolean;
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, priority = false }: ProjectCardProps) {
   const gradient = projectGradients[project.id] ?? "from-stone-900/60 via-surface-card to-surface-card";
   const accent = projectAccent[project.id] ?? "#F59E0B";
 
@@ -48,6 +49,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
               src={project.images.thumbnail}
               alt={`${project.name} screenshot`}
               fill
+              priority={priority}
+              quality={priority ? 90 : 75}
               className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />

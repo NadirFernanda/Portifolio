@@ -25,7 +25,7 @@ export function ProjectsSection() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="h-full"
             >
-              <ProjectCard project={project} />
+              <ProjectCard project={project} priority={i === 0} />
             </motion.div>
           ))}
         </div>
