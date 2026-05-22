@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 const SITE_URL = "https://portifolio-nine-azure-22.vercel.app";
-const OG_IMAGE = `${SITE_URL}/images/og-image.png`;
+const OG_IMAGE = `${SITE_URL}/images/og-image.jpg`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
