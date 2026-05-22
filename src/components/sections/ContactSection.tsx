@@ -26,22 +26,10 @@ export function ContactSection() {
             className="flex flex-col gap-8"
           >
             <div>
-              <h3 className="text-lg font-semibold text-text mb-2">
-                What I'm looking for
-              </h3>
-              <ul className="space-y-2">
-                {[
-                  "Full Stack or Backend Engineering roles",
-                  "Remote-first companies globally",
-                  "Freelance projects with real impact",
-                  "Systems that need full delivery — dev to infra",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-muted">
-                    <span className="text-primary mt-1">▸</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p className="text-muted leading-relaxed">
+                Available for full-time remote roles, part-time contracts, and freelance projects.
+                Timezone UTC+1 · Accepts USD and EUR.
+              </p>
             </div>
 
             <div>
