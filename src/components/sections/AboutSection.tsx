@@ -19,6 +19,24 @@ const highlights = [
   "English — professional level",
 ];
 
+const availability = {
+  timezone: "UTC+1 · West Africa Time (Angola)",
+  types: ["Full-time", "Part-time", "Freelance / Contract"],
+  currencies: ["USD", "EUR"],
+  open: [
+    "Fully remote positions",
+    "Async-friendly teams",
+    "International projects",
+    "Long-term contracts",
+  ],
+  notLooking: [
+    "On-site only roles",
+    "Equity-only compensation",
+    "Unpaid trials or test projects",
+    "Non-technical roles",
+  ],
+};
+
 export function AboutSection() {
   return (
     <section id="about" className="py-28 px-4 relative overflow-hidden">
@@ -108,7 +126,7 @@ export function AboutSection() {
               ))}
             </div>
 
-            {/* What I do well */}
+            {/* What I deliver */}
             <div className="rounded-2xl border border-border bg-surface-card p-6">
               <h4 className="text-sm font-semibold text-text uppercase tracking-widest mb-4">
                 What I deliver
@@ -121,6 +139,75 @@ export function AboutSection() {
                   </li>
                 ))}
               </ul>
+            </div>
+
+            {/* Availability */}
+            <div className="rounded-2xl border border-primary/30 bg-surface-card p-6 space-y-5">
+              <div className="flex items-center justify-between">
+                <h4 className="text-sm font-semibold text-text uppercase tracking-widest">
+                  Availability
+                </h4>
+                <span className="inline-flex items-center gap-1.5 text-xs font-medium text-primary">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+                  Open to work
+                </span>
+              </div>
+
+              {/* Meta row */}
+              <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-muted">
+                <span className="flex items-center gap-1.5">
+                  <span className="text-primary">◎</span>
+                  {availability.timezone}
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="text-primary">◎</span>
+                  {availability.currencies.join(" · ")}
+                </span>
+              </div>
+
+              {/* Contract types */}
+              <div className="flex flex-wrap gap-2">
+                {availability.types.map((t) => (
+                  <span
+                    key={t}
+                    className="text-xs px-2.5 py-1 rounded-full border border-primary/30 text-primary bg-primary/10 font-medium"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+                {/* Open to */}
+                <div>
+                  <p className="text-xs font-semibold text-text mb-2 uppercase tracking-wider">
+                    Open to
+                  </p>
+                  <ul className="space-y-1.5">
+                    {availability.open.map((item) => (
+                      <li key={item} className="flex items-center gap-2 text-xs text-muted">
+                        <span className="text-primary text-base leading-none">✓</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Not looking for */}
+                <div>
+                  <p className="text-xs font-semibold text-muted mb-2 uppercase tracking-wider">
+                    Not looking for
+                  </p>
+                  <ul className="space-y-1.5">
+                    {availability.notLooking.map((item) => (
+                      <li key={item} className="flex items-center gap-2 text-xs text-muted/60">
+                        <span className="text-muted/40 text-base leading-none">✕</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
