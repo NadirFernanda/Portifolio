@@ -50,14 +50,14 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "Fernanda Gonçalves | Software Engineer",
       description:
         "Building scalable web systems, APIs, and Linux infrastructure — from architecture to production deploy.",
-      images: [{ url: `${baseUrl}/opengraph-image`, width: 1200, height: 630, alt: "Fernanda Gonçalves — Software Engineer" }],
+      images: [{ url: `${baseUrl}/images/og-image.png`, width: 1200, height: 630, alt: "Fernanda Gonçalves — Software Engineer" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "Fernanda Gonçalves | Software Engineer",
       description:
         "Building scalable web systems, APIs, and Linux infrastructure.",
-      images: [`${baseUrl}/opengraph-image`],
+      images: [`${baseUrl}/images/og-image.png`],
     },
     robots: {
       index: true,
