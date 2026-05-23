@@ -47,6 +47,7 @@ export interface Translations {
     description: string;
     liveDemo: string;
     privateSystem: string;
+    viewDetails: string;
   };
   skills: {
     label: string;
@@ -157,6 +158,7 @@ export const translations: Record<Language, Translations> = {
       description: "Real systems built and deployed in production — not demos or tutorials.",
       liveDemo: "Live Demo",
       privateSystem: "Private System",
+      viewDetails: "View details",
     },
     skills: {
       label: "Stack",
@@ -267,6 +269,7 @@ export const translations: Record<Language, Translations> = {
       description: "Sistemas reais construídos e implantados em produção — não demos ou tutoriais.",
       liveDemo: "Demo ao Vivo",
       privateSystem: "Sistema Privado",
+      viewDetails: "Ver detalhes",
     },
     skills: {
       label: "Stack",
@@ -377,6 +380,7 @@ export const translations: Record<Language, Translations> = {
       description: "Systèmes réels construits et déployés en production — pas des démos ou tutoriels.",
       liveDemo: "Démo en direct",
       privateSystem: "Système privé",
+      viewDetails: "Voir les détails",
     },
     skills: {
       label: "Stack",
