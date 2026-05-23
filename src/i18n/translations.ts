@@ -93,6 +93,7 @@ export interface Translations {
     prevProject: string;
     nextProject: string;
     otherProjects: string;
+    screenshots: string;
   };
 }
 
@@ -208,6 +209,7 @@ export const translations: Record<Language, Translations> = {
       prevProject: "Previous project",
       nextProject: "Next project",
       otherProjects: "Other projects",
+      screenshots: "Screenshots",
     },
   },
 
@@ -322,6 +324,7 @@ export const translations: Record<Language, Translations> = {
       prevProject: "Projeto anterior",
       nextProject: "Próximo projeto",
       otherProjects: "Outros projetos",
+      screenshots: "Capturas de ecrã",
     },
   },
 
@@ -436,6 +439,7 @@ export const translations: Record<Language, Translations> = {
       prevProject: "Projet précédent",
       nextProject: "Projet suivant",
       otherProjects: "Autres projets",
+      screenshots: "Captures d'écran",
     },
   },
 };

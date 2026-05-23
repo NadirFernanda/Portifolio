@@ -22,7 +22,11 @@ export const projects: Project[] = [
     ],
     images: {
       thumbnail: "/images/projects/medfreela/medfreela.ao_.png",
-      screenshots: ["/images/projects/medfreela/medfreela.ao_.png"],
+      screenshots: [
+        "/images/projects/medfreela/medfreela.ao_.png",
+        "/images/projects/medfreela/medfreela.ao_login.png",
+        "/images/projects/medfreela/medfreela.ao_candidatura.png",
+      ],
     },
     links: {
       demo: "https://medfreela.ao",
