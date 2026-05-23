@@ -4,14 +4,17 @@ import { motion } from "framer-motion";
 import { Briefcase, MapPin } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { experience } from "@/data/experience";
+import { useTranslation } from "@/i18n/LanguageContext";
 
 export function ExperienceSection() {
+  const { t } = useTranslation();
+
   return (
     <section id="experience" className="py-24 px-4 bg-surface-light/30">
       <div className="max-w-4xl mx-auto">
         <SectionHeader
-          label="Experience"
-          title="Professional Background"
+          label={t.experience.label}
+          title={t.experience.title}
         />
 
         <div className="relative">

@@ -5,15 +5,18 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ContactForm } from "@/components/ui/ContactForm";
 import { ContactButton } from "@/components/ui/ContactButton";
 import { contactLinks } from "@/data/contact";
+import { useTranslation } from "@/i18n/LanguageContext";
 
 export function ContactSection() {
+  const { t } = useTranslation();
+
   return (
     <section id="contact" className="py-24 px-4">
       <div className="max-w-5xl mx-auto">
         <SectionHeader
-          label="Contact"
-          title="Let's Work Together"
-          description="Open to remote opportunities, freelance projects, and technical collaborations."
+          label={t.contact.label}
+          title={t.contact.title}
+          description={t.contact.description}
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -27,14 +30,13 @@ export function ContactSection() {
           >
             <div>
               <p className="text-muted leading-relaxed">
-                Available for full-time remote roles, part-time contracts, and freelance projects.
-                Timezone UTC+1 · Accepts USD and EUR.
+                {t.contact.availability}
               </p>
             </div>
 
             <div>
               <h3 className="text-lg font-semibold text-text mb-4">
-                Connect directly
+                {t.contact.connectDirectly}
               </h3>
               <div className="flex flex-col gap-3">
                 {contactLinks.map((link) => (
@@ -58,7 +60,7 @@ export function ContactSection() {
             transition={{ duration: 0.5 }}
             className="rounded-2xl border border-border bg-surface-card p-8"
           >
-            <h3 className="text-lg font-semibold text-text mb-6">Send a message</h3>
+            <h3 className="text-lg font-semibold text-text mb-6">{t.contact.sendMessage}</h3>
             <ContactForm />
           </motion.div>
         </div>

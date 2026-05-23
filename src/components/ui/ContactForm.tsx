@@ -3,10 +3,12 @@
 import { useState } from "react";
 import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { useContactForm } from "@/hooks/useContactForm";
+import { useTranslation } from "@/i18n/LanguageContext";
 
 export function ContactForm() {
   const { status, errorMessage, submit, reset } = useContactForm();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const { t } = useTranslation();
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -14,7 +16,7 @@ export function ContactForm() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     await submit(form);
   }
@@ -23,15 +25,15 @@ export function ContactForm() {
     return (
       <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
         <CheckCircle className="h-12 w-12 text-primary" />
-        <h3 className="text-lg font-semibold text-text">Message sent!</h3>
+        <h3 className="text-lg font-semibold text-text">{t.form.successTitle}</h3>
         <p className="text-muted text-sm">
-          Thanks for reaching out. I'll get back to you as soon as possible.
+          {t.form.successMessage}
         </p>
         <button
           onClick={() => { reset(); setForm({ name: "", email: "", message: "" }); }}
           className="mt-2 text-sm text-primary hover:text-primary-dark transition-colors"
         >
-          Send another message
+          {t.form.sendAnother}
         </button>
       </div>
     );
@@ -42,7 +44,7 @@ export function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="flex flex-col gap-1.5">
           <label htmlFor="name" className="text-xs font-medium text-muted uppercase tracking-wider">
-            Name
+            {t.form.name}
           </label>
           <input
             id="name"
@@ -53,13 +55,13 @@ export function ContactForm() {
             maxLength={100}
             value={form.name}
             onChange={handleChange}
-            placeholder="Your name"
+            placeholder={t.form.namePlaceholder}
             className="rounded-lg bg-surface-light border border-border px-4 py-3 text-sm text-text placeholder-muted/50 outline-none focus:border-primary transition-colors"
           />
         </div>
         <div className="flex flex-col gap-1.5">
           <label htmlFor="email" className="text-xs font-medium text-muted uppercase tracking-wider">
-            Email
+            {t.form.email}
           </label>
           <input
             id="email"
@@ -76,7 +78,7 @@ export function ContactForm() {
 
       <div className="flex flex-col gap-1.5">
         <label htmlFor="message" className="text-xs font-medium text-muted uppercase tracking-wider">
-          Message
+          {t.form.message}
         </label>
         <textarea
           id="message"
@@ -87,7 +89,7 @@ export function ContactForm() {
           rows={5}
           value={form.message}
           onChange={handleChange}
-          placeholder="Tell me about your project or opportunity..."
+          placeholder={t.form.messagePlaceholder}
           className="rounded-lg bg-surface-light border border-border px-4 py-3 text-sm text-text placeholder-muted/50 outline-none focus:border-primary transition-colors resize-none"
         />
       </div>
@@ -107,12 +109,12 @@ export function ContactForm() {
         {status === "loading" ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin" />
-            Sending...
+            {t.form.sending}
           </>
         ) : (
           <>
             <Send className="h-4 w-4" />
-            Send Message
+            {t.form.send}
           </>
         )}
       </button>

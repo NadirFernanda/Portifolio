@@ -4,20 +4,31 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
+import { useTranslation } from "@/i18n/LanguageContext";
+import type { Language } from "@/i18n/translations";
 
-const navLinks = [
-  { id: "home", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "projects", label: "Projects" },
-  { id: "skills", label: "Skills" },
-  { id: "experience", label: "Experience" },
-  { id: "contact", label: "Contact" },
+const NAV_IDS = ["home", "about", "projects", "skills", "experience", "contact"];
+
+const LANGUAGES: { code: Language; label: string }[] = [
+  { code: "en", label: "EN" },
+  { code: "pt", label: "PT" },
+  { code: "fr", label: "FR" },
 ];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const activeSection = useScrollSpy(navLinks.map((l) => l.id));
+  const activeSection = useScrollSpy(NAV_IDS);
+  const { lang, setLang, t } = useTranslation();
+
+  const navLinks = [
+    { id: "home", label: t.nav.home },
+    { id: "about", label: t.nav.about },
+    { id: "projects", label: t.nav.projects },
+    { id: "skills", label: t.nav.skills },
+    { id: "experience", label: t.nav.experience },
+    { id: "contact", label: t.nav.contact },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -62,13 +73,34 @@ export function Navbar() {
           ))}
         </ul>
 
-        {/* CTA */}
-        <a
-          href="#contact"
-          className="hidden md:inline-flex items-center gap-2 rounded-xl border border-primary/50 text-primary hover:bg-primary hover:text-surface hover:border-primary px-4 py-1.5 text-sm font-bold transition-all"
-        >
-          Hire Me
-        </a>
+        {/* Language switcher + CTA */}
+        <div className="hidden md:flex items-center gap-3">
+          <div className="flex items-center font-mono text-xs">
+            {LANGUAGES.map((l, i) => (
+              <div key={l.code} className="flex items-center">
+                {i > 0 && <span className="text-border mx-1">·</span>}
+                <button
+                  onClick={() => setLang(l.code)}
+                  className={cn(
+                    "px-1.5 py-1 rounded transition-colors",
+                    lang === l.code
+                      ? "text-primary font-semibold"
+                      : "text-muted/60 hover:text-muted"
+                  )}
+                >
+                  {l.label}
+                </button>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 rounded-xl border border-primary/50 text-primary hover:bg-primary hover:text-surface hover:border-primary px-4 py-1.5 text-sm font-bold transition-all"
+          >
+            {t.nav.hireMe}
+          </a>
+        </div>
 
         {/* Mobile menu button */}
         <button
@@ -106,10 +138,26 @@ export function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className="block text-center rounded-xl bg-primary text-surface font-bold px-4 py-2.5 text-sm"
               >
-                Hire Me
+                {t.nav.hireMe}
               </a>
             </li>
           </ul>
+
+          {/* Mobile language switcher */}
+          <div className="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-border">
+            {LANGUAGES.map((l) => (
+              <button
+                key={l.code}
+                onClick={() => setLang(l.code)}
+                className={cn(
+                  "font-mono text-sm font-medium transition-colors",
+                  lang === l.code ? "text-primary" : "text-muted/60 hover:text-muted"
+                )}
+              >
+                {l.label}
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </header>

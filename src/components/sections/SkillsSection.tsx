@@ -5,6 +5,7 @@ import { Monitor, Server, Database, Cloud } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { SkillBadge } from "@/components/ui/SkillBadge";
 import { skillCategories } from "@/data/skills";
+import { useTranslation } from "@/i18n/LanguageContext";
 
 const categoryIcons: Record<string, React.ElementType> = {
   Monitor,
@@ -14,13 +15,15 @@ const categoryIcons: Record<string, React.ElementType> = {
 };
 
 export function SkillsSection() {
+  const { t } = useTranslation();
+
   return (
     <section id="skills" className="py-24 px-4">
       <div className="max-w-6xl mx-auto">
         <SectionHeader
-          label="Stack"
-          title="Technologies"
-          description="Tools I use to design, build, and deploy production systems."
+          label={t.skills.label}
+          title={t.skills.title}
+          description={t.skills.description}
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -55,15 +58,15 @@ export function SkillsSection() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-muted">
           <span className="flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-primary inline-block" />
-            Expert
+            {t.skills.expert}
           </span>
           <span className="flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-secondary inline-block" />
-            Advanced
+            {t.skills.advanced}
           </span>
           <span className="flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-border inline-block" />
-            Intermediate
+            {t.skills.intermediate}
           </span>
         </div>
       </div>

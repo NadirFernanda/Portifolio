@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { ExternalLink, LockKeyhole } from "lucide-react";
 import type { Project } from "@/types";
+import { useTranslation } from "@/i18n/LanguageContext";
 
 function GithubIcon({ className }: { className?: string }) {
   return (
@@ -34,6 +37,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, priority = false }: ProjectCardProps) {
+  const { t } = useTranslation();
   const gradient = projectGradients[project.id] ?? "from-stone-900/60 via-surface-card to-surface-card";
   const accent = projectAccent[project.id] ?? "#F59E0B";
 
@@ -140,12 +144,12 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-primary-light transition-colors"
             >
               <ExternalLink className="h-3.5 w-3.5" />
-              Live Demo
+              {t.projects.liveDemo}
             </a>
           ) : (
             <span className="inline-flex items-center gap-1.5 text-xs text-muted">
               <LockKeyhole className="h-3.5 w-3.5" />
-              Private System
+              {t.projects.privateSystem}
             </span>
           )}
           {project.links.github && (

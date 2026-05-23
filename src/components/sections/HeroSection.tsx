@@ -5,8 +5,11 @@ import { MapPin, Circle, ArrowDown } from "lucide-react";
 import { ContactButton } from "@/components/ui/ContactButton";
 import { person } from "@/data/person";
 import { contactLinks } from "@/data/contact";
+import { useTranslation } from "@/i18n/LanguageContext";
 
 export function HeroSection() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="home"
@@ -38,7 +41,7 @@ export function HeroSection() {
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary text-xs font-semibold mb-8 tracking-wide"
             >
               <Circle className="h-2 w-2 fill-primary animate-pulse" />
-              Available for new opportunities
+              {t.hero.available}
             </motion.div>
           )}
 
@@ -65,9 +68,9 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.25 }}
             className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3"
           >
-            <span className="text-xl sm:text-2xl font-bold text-primary">{person.title}</span>
+            <span className="text-xl sm:text-2xl font-bold text-primary">{t.person.title}</span>
             <span className="hidden sm:block w-1.5 h-1.5 rounded-full bg-border" />
-            <span className="text-lg sm:text-xl font-medium text-muted">{person.subtitle}</span>
+            <span className="text-lg sm:text-xl font-medium text-muted">{t.person.subtitle}</span>
           </motion.div>
 
           {/* Tagline */}
@@ -77,8 +80,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="mt-6 max-w-xl mx-auto text-muted text-base sm:text-lg leading-relaxed"
           >
-            Building scalable web systems, REST APIs, and Linux infrastructure —
-            from architecture to production deploy.
+            {t.hero.tagline}
           </motion.p>
 
           {/* Location */}
@@ -111,13 +113,13 @@ export function HeroSection() {
               href="#contact"
               className="inline-flex items-center gap-2 rounded-xl bg-primary hover:bg-primary-dark text-surface font-bold px-6 py-3 text-sm transition-all hover:scale-105 shadow-lg shadow-primary/20"
             >
-              Get in Touch
+              {t.hero.getInTouch}
             </a>
             <a
               href="#projects"
               className="inline-flex items-center gap-2 rounded-xl border border-border text-muted hover:border-primary/50 hover:text-primary px-6 py-3 text-sm font-medium transition-all"
             >
-              See My Work
+              {t.hero.seeMyWork}
             </a>
           </motion.div>
 
@@ -137,7 +139,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator — fundo da secção via flexbox */}
+      {/* Scroll indicator */}
       <motion.a
         href="#about"
         initial={{ opacity: 0 }}
@@ -145,7 +147,7 @@ export function HeroSection() {
         transition={{ delay: 1.4 }}
         className="relative z-10 pb-8 flex flex-col items-center gap-2 text-muted hover:text-primary transition-colors"
       >
-        <span className="text-xs font-mono tracking-widest">scroll</span>
+        <span className="text-xs font-mono tracking-widest">{t.hero.scroll}</span>
         <ArrowDown className="h-4 w-4 animate-bounce" />
       </motion.a>
     </section>

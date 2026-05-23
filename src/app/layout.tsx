@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -100,7 +101,9 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen antialiased" suppressHydrationWarning>
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
         {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
           <Script
             src="https://cloud.umami.is/script.js"
