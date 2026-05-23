@@ -173,10 +173,10 @@ export const projects: Project[] = [
     name: "AngolWifi — Management System",
     tagline: "Internal company management platform",
     description:
-      "Comprehensive internal management system for an Angolan ISP — covering clients, service plans, billing, technical support, and MikroTik router integration. Payments via Pay4All (Multicaixa Express), automatic plan suspension via scheduled tasks, and WhatsApp notifications for alerts and billing.",
+      "Comprehensive internal management system for an Angolan ISP — covering clients, service plans, billing, technical support, and MikroTik router integration. Payments via EMIS (Multicaixa Express / GPO), automatic plan suspension via scheduled tasks, and WhatsApp notifications for alerts and billing.",
     problem:
-      "AngolWifi was managing clients, contracts, and support through disconnected tools. There was no automation for plan expiration, no audit trail, and no direct integration with MikroTik routers or local payment gateways.",
-    role: "Full development: system architecture, backend services, frontend, MikroTik and Pay4All integrations, scheduled automation, and internal deployment.",
+      "AngolWifi was managing clients, contracts, and support through disconnected tools. There was no automation for plan expiration, no audit trail, and no direct integration with MikroTik routers or the local EMIS payment gateway.",
+    role: "Full development: system architecture, backend services, frontend, MikroTik RouterOS API and EMIS integrations, scheduled automation, and internal deployment.",
     stack: [
       "Laravel 12",
       "PHP 8.2",
@@ -190,10 +190,10 @@ export const projects: Project[] = [
       "Maatwebsite Excel",
     ],
     highlights: [
-      "Direct MikroTik integration via RouterOS API (TCP/8728) — no third-party library, full control",
-      "Pay4All (OAuth2 + REST) for Multicaixa Express payments — built for the Angolan market",
-      "WhatsApp notifications via abstracted service layer — provider-swappable without touching core logic",
-      "Spatie Activity Log for immutable audit trail — who changed what and when",
+      "MikroTik RouterOS API over raw TCP/8728 — no third-party library, direct binary protocol implementation with full control over router state",
+      "EMIS payment gateway integration (Multicaixa Express / GPO) — built specifically for the Angolan market, no generic payment abstraction",
+      "WhatsApp notification layer fully abstracted behind a service interface — swap Twilio, UltraMsg, or Z-API without touching any business logic",
+      "Spatie Activity Log for immutable audit trail — every change records who, what, and when",
       "Granular role-based access with Spatie Permission (Administrador, Técnico, etc.)",
       "Scheduled automation: plan sync every 5 min, suspension at 01:00, expiry alerts at 13:00 and 18:00",
       "PDF report generation (DomPDF) and Excel export (Maatwebsite) for clients and billing",
