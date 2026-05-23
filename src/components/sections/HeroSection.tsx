@@ -121,6 +121,12 @@ export function HeroSection() {
             >
               {t.hero.seeMyWork}
             </a>
+            <ContactButton
+              link={contactLinks.find((l) => l.type === "cv")!}
+              variant="ghost"
+              size="md"
+              showLabel
+            />
           </motion.div>
 
           {/* Social links */}
