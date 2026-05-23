@@ -180,7 +180,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
             )}
           </div>
 
-          <span className="inline-flex items-center gap-1 text-xs font-medium text-muted/50 group-hover:text-primary transition-colors pointer-events-none">
+          <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary bg-primary/10 border border-primary/25 px-2.5 py-1 rounded-full group-hover:bg-primary/20 group-hover:border-primary/50 transition-all pointer-events-none">
             {t.projects.viewDetails}
             <ArrowRight className="h-3 w-3 transition-transform duration-200 group-hover:translate-x-0.5" />
           </span>
