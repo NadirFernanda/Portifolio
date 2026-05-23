@@ -90,6 +90,9 @@ export interface Translations {
     liveDemo: string;
     viewOnGithub: string;
     privateSystem: string;
+    prevProject: string;
+    nextProject: string;
+    otherProjects: string;
   };
 }
 
@@ -202,6 +205,9 @@ export const translations: Record<Language, Translations> = {
       liveDemo: "Live Demo",
       viewOnGithub: "View on GitHub",
       privateSystem: "Private System",
+      prevProject: "Previous project",
+      nextProject: "Next project",
+      otherProjects: "Other projects",
     },
   },
 
@@ -313,6 +319,9 @@ export const translations: Record<Language, Translations> = {
       liveDemo: "Demo ao Vivo",
       viewOnGithub: "Ver no GitHub",
       privateSystem: "Sistema Privado",
+      prevProject: "Projeto anterior",
+      nextProject: "Próximo projeto",
+      otherProjects: "Outros projetos",
     },
   },
 
@@ -424,6 +433,9 @@ export const translations: Record<Language, Translations> = {
       liveDemo: "Démo en direct",
       viewOnGithub: "Voir sur GitHub",
       privateSystem: "Système privé",
+      prevProject: "Projet précédent",
+      nextProject: "Projet suivant",
+      otherProjects: "Autres projets",
     },
   },
 };

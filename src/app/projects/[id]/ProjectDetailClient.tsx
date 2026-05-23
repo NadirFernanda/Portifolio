@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, LockKeyhole } from "lucide-react";
+import { motion } from "framer-motion";
+import { ExternalLink, LockKeyhole, ChevronLeft, ChevronRight } from "lucide-react";
 import type { Project } from "@/types";
+import { projects } from "@/data/projects";
 import { useTranslation } from "@/i18n/LanguageContext";
 
 function GithubIcon({ className }: { className?: string }) {
@@ -14,25 +16,66 @@ function GithubIcon({ className }: { className?: string }) {
   );
 }
 
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 24 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5, delay, ease: "easeOut" as const },
+});
+
+function OtherProjectCard({ project }: { project: Project }) {
+  return (
+    <Link
+      href={`/projects/${project.id}`}
+      className="group flex gap-4 p-4 rounded-2xl border border-border bg-surface-card hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-300"
+    >
+      {project.images.thumbnail && (
+        <div className="relative w-24 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-surface-light">
+          <Image
+            src={project.images.thumbnail}
+            alt={project.name}
+            fill
+            className="object-cover object-top"
+            sizes="96px"
+          />
+        </div>
+      )}
+      <div className="min-w-0 flex flex-col justify-center">
+        <h3 className="font-bold text-text text-sm group-hover:text-primary transition-colors truncate">
+          {project.name}
+        </h3>
+        <p className="text-xs text-primary font-mono mt-0.5 truncate">{project.tagline}</p>
+        <p className="text-xs text-muted mt-1 line-clamp-2 leading-relaxed">{project.description}</p>
+      </div>
+    </Link>
+  );
+}
+
 export function ProjectDetailClient({ project }: { project: Project }) {
   const { t } = useTranslation();
   const pd = t.projectDetail;
+
+  const currentIndex = projects.findIndex((p) => p.id === project.id);
+  const prevProject = projects[(currentIndex - 1 + projects.length) % projects.length];
+  const nextProject = projects[(currentIndex + 1) % projects.length];
+  const otherProjects = projects.filter((p) => p.id !== project.id).slice(0, 2);
 
   return (
     <main className="min-h-screen bg-surface px-4 py-12">
       <div className="max-w-5xl mx-auto">
 
         {/* Back link */}
-        <Link
-          href="/#projects"
-          className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-primary transition-colors mb-10 font-medium"
-        >
-          {pd.back}
-        </Link>
+        <motion.div {...fadeUp(0)}>
+          <Link
+            href="/#projects"
+            className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-primary transition-colors mb-10 font-medium"
+          >
+            {pd.back}
+          </Link>
+        </motion.div>
 
         {/* Full screenshot */}
         {project.images.screenshots[0] && (
-          <div className="relative w-full rounded-2xl overflow-hidden border border-border bg-surface-card mb-10">
+          <motion.div {...fadeUp(0.08)} className="relative w-full rounded-2xl overflow-hidden border border-border bg-surface-card mb-10">
             <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
               <Image
                 src={project.images.screenshots[0]}
@@ -44,11 +87,11 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                 sizes="(max-width: 768px) 100vw, 1024px"
               />
             </div>
-          </div>
+          </motion.div>
         )}
 
         {/* Header */}
-        <div className="mb-10">
+        <motion.div {...fadeUp(0.16)} className="mb-10">
           <div className="flex flex-wrap items-center gap-3 mb-3">
             <span className="text-xs font-mono px-2 py-1 rounded-md bg-surface-light border border-border text-muted">
               {project.year}
@@ -60,35 +103,29 @@ export function ProjectDetailClient({ project }: { project: Project }) {
               </span>
             )}
           </div>
-
           <h1 className="text-4xl sm:text-5xl font-black text-text tracking-tight mb-2">
             {project.name}
           </h1>
           <p className="text-base font-mono text-primary">{project.tagline}</p>
-        </div>
+        </motion.div>
 
         {/* Description */}
-        <p className="text-muted leading-relaxed text-base mb-12 max-w-3xl">
+        <motion.p {...fadeUp(0.22)} className="text-muted leading-relaxed text-base mb-12 max-w-3xl">
           {project.description}
-        </p>
+        </motion.p>
 
         {/* Two-column detail */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <motion.div {...fadeUp(0.28)} className="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-16">
 
           {/* Left — Problem + Features */}
           <div className="lg:col-span-3 flex flex-col gap-8">
-
-            {/* The Problem */}
             <div className="rounded-2xl border border-border bg-surface-card p-6">
               <h2 className="text-xs font-mono font-semibold tracking-[0.2em] text-primary uppercase mb-4 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 inline-block">
                 {pd.theProblem}
               </h2>
-              <p className="text-muted leading-relaxed text-sm mt-4">
-                {project.problem}
-              </p>
+              <p className="text-muted leading-relaxed text-sm mt-4">{project.problem}</p>
             </div>
 
-            {/* Key Features */}
             <div className="rounded-2xl border border-border bg-surface-card p-6">
               <h2 className="text-xs font-mono font-semibold tracking-[0.2em] text-primary uppercase mb-4 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 inline-block">
                 {pd.keyFeatures}
@@ -106,8 +143,6 @@ export function ProjectDetailClient({ project }: { project: Project }) {
 
           {/* Right — Stack, Role, Links */}
           <div className="lg:col-span-2 flex flex-col gap-6">
-
-            {/* Tech Stack */}
             <div className="rounded-2xl border border-border bg-surface-card p-6">
               <h2 className="text-xs font-semibold text-text uppercase tracking-widest mb-4">
                 {pd.techStack}
@@ -124,7 +159,6 @@ export function ProjectDetailClient({ project }: { project: Project }) {
               </div>
             </div>
 
-            {/* Role */}
             <div className="rounded-2xl border border-border bg-surface-card p-6">
               <h2 className="text-xs font-semibold text-text uppercase tracking-widest mb-3">
                 {pd.role}
@@ -132,7 +166,6 @@ export function ProjectDetailClient({ project }: { project: Project }) {
               <p className="text-sm text-muted leading-relaxed">{project.role}</p>
             </div>
 
-            {/* Links */}
             <div className="rounded-2xl border border-primary/30 bg-surface-card p-6 flex flex-col gap-3">
               {project.links.demo ? (
                 <a
@@ -150,7 +183,6 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                   {pd.privateSystem}
                 </span>
               )}
-
               {project.links.github && (
                 <a
                   href={project.links.github}
@@ -164,7 +196,55 @@ export function ProjectDetailClient({ project }: { project: Project }) {
               )}
             </div>
           </div>
-        </div>
+        </motion.div>
+
+        {/* ── Other projects ── */}
+        <motion.section {...fadeUp(0.1)} viewport={{ once: true }} className="mb-12">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.2em] text-primary uppercase mb-6 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 inline-block">
+            {pd.otherProjects}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {otherProjects.map((p) => (
+              <OtherProjectCard key={p.id} project={p} />
+            ))}
+          </div>
+        </motion.section>
+
+        {/* ── Prev / Next navigation ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="grid grid-cols-2 gap-4 border-t border-border pt-8"
+        >
+          <Link
+            href={`/projects/${prevProject.id}`}
+            className="group flex flex-col gap-1.5 p-4 rounded-2xl border border-border bg-surface-card hover:border-primary/40 transition-all duration-300"
+          >
+            <span className="inline-flex items-center gap-1 text-xs text-muted group-hover:text-primary transition-colors">
+              <ChevronLeft className="h-3.5 w-3.5" />
+              {pd.prevProject}
+            </span>
+            <span className="font-bold text-text text-sm group-hover:text-primary transition-colors truncate">
+              {prevProject.name}
+            </span>
+          </Link>
+
+          <Link
+            href={`/projects/${nextProject.id}`}
+            className="group flex flex-col items-end gap-1.5 p-4 rounded-2xl border border-border bg-surface-card hover:border-primary/40 transition-all duration-300"
+          >
+            <span className="inline-flex items-center gap-1 text-xs text-muted group-hover:text-primary transition-colors">
+              {pd.nextProject}
+              <ChevronRight className="h-3.5 w-3.5" />
+            </span>
+            <span className="font-bold text-text text-sm group-hover:text-primary transition-colors truncate">
+              {nextProject.name}
+            </span>
+          </Link>
+        </motion.div>
+
       </div>
     </main>
   );
