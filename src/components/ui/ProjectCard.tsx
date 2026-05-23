@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ExternalLink, LockKeyhole } from "lucide-react";
 import type { Project } from "@/types";
 import { useTranslation } from "@/i18n/LanguageContext";
@@ -42,7 +43,13 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
   const accent = projectAccent[project.id] ?? "#F59E0B";
 
   return (
-    <article className="group flex flex-col h-full rounded-2xl border border-border bg-surface-card overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
+    <article className="group relative flex flex-col h-full rounded-2xl border border-border bg-surface-card overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+      {/* Stretched link — covers the whole card except footer buttons */}
+      <Link
+        href={`/projects/${project.id}`}
+        className="absolute inset-0 z-0 rounded-2xl"
+        aria-label={`View ${project.name} details`}
+      />
 
       {/* Thumbnail */}
       <div className={`relative h-52 overflow-hidden ${project.images.thumbnail ? "bg-surface-card" : `bg-gradient-to-br ${gradient} flex items-center justify-center`}`}>
@@ -135,7 +142,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
         </p>
 
         {/* Links */}
-        <div className="mt-4 flex gap-4">
+        <div className="mt-4 flex gap-4 relative z-10">
           {project.links.demo ? (
             <a
               href={project.links.demo}

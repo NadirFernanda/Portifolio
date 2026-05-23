@@ -80,6 +80,16 @@ export interface Translations {
     successMessage: string;
     sendAnother: string;
   };
+  projectDetail: {
+    back: string;
+    theProblem: string;
+    keyFeatures: string;
+    techStack: string;
+    role: string;
+    liveDemo: string;
+    viewOnGithub: string;
+    privateSystem: string;
+  };
 }
 
 export const translations: Record<Language, Translations> = {
@@ -181,6 +191,16 @@ export const translations: Record<Language, Translations> = {
       successMessage: "Thanks for reaching out. I'll get back to you as soon as possible.",
       sendAnother: "Send another message",
     },
+    projectDetail: {
+      back: "← Back to portfolio",
+      theProblem: "The Problem",
+      keyFeatures: "Key Features",
+      techStack: "Tech Stack",
+      role: "Role",
+      liveDemo: "Live Demo",
+      viewOnGithub: "View on GitHub",
+      privateSystem: "Private System",
+    },
   },
 
   pt: {
@@ -281,6 +301,16 @@ export const translations: Record<Language, Translations> = {
       successMessage: "Obrigada pelo contato. Retornarei o mais breve possível.",
       sendAnother: "Enviar outra mensagem",
     },
+    projectDetail: {
+      back: "← Voltar ao portfólio",
+      theProblem: "O Problema",
+      keyFeatures: "Principais Funcionalidades",
+      techStack: "Tecnologias",
+      role: "Função",
+      liveDemo: "Demo ao Vivo",
+      viewOnGithub: "Ver no GitHub",
+      privateSystem: "Sistema Privado",
+    },
   },
 
   fr: {
@@ -380,6 +410,16 @@ export const translations: Record<Language, Translations> = {
       successTitle: "Message envoyé !",
       successMessage: "Merci de m'avoir contactée. Je vous répondrai dès que possible.",
       sendAnother: "Envoyer un autre message",
+    },
+    projectDetail: {
+      back: "← Retour au portfolio",
+      theProblem: "Le Problème",
+      keyFeatures: "Fonctionnalités clés",
+      techStack: "Technologies",
+      role: "Rôle",
+      liveDemo: "Démo en direct",
+      viewOnGithub: "Voir sur GitHub",
+      privateSystem: "Système privé",
     },
   },
 };
