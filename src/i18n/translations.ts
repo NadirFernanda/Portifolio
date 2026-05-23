@@ -180,7 +180,7 @@ export const translations: Record<Language, Translations> = {
       title: "Let's Work Together",
       description: "Open to remote opportunities, freelance projects, and technical collaborations.",
       availability:
-        "Available for full-time remote roles, part-time contracts, and freelance projects. Timezone UTC+1 · Accepts USD and EUR.",
+        "Available for full-time remote roles, part-time contracts, and freelance projects. Timezone UTC+1 · Accepts USD, EUR, BRL and AOA.",
       connectDirectly: "Connect directly",
       sendMessage: "Send a message",
     },
@@ -294,7 +294,7 @@ export const translations: Record<Language, Translations> = {
       title: "Vamos Trabalhar Juntos",
       description: "Aberta a oportunidades remotas, projetos freelance e colaborações técnicas.",
       availability:
-        "Disponível para cargos remotos em tempo integral, contratos de meio período e projetos freelance. Fuso horário UTC+1 · Aceita USD e EUR.",
+        "Disponível para cargos remotos em tempo integral, contratos de meio período e projetos freelance. Fuso horário UTC+1 · Aceita USD, EUR, BRL e AOA.",
       connectDirectly: "Conecte diretamente",
       sendMessage: "Enviar uma mensagem",
     },
@@ -408,7 +408,7 @@ export const translations: Record<Language, Translations> = {
       title: "Travaillons ensemble",
       description: "Ouverte aux opportunités à distance, projets freelance et collaborations techniques.",
       availability:
-        "Disponible pour des postes à distance à temps plein, des contrats à temps partiel et des projets freelance. Fuseau horaire UTC+1 · Accepte USD et EUR.",
+        "Disponible pour des postes à distance à temps plein, des contrats à temps partiel et des projets freelance. Fuseau horaire UTC+1 · Accepte USD, EUR, BRL et AOA.",
       connectDirectly: "Contacter directement",
       sendMessage: "Envoyer un message",
     },

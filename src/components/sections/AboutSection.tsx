@@ -138,7 +138,7 @@ export function AboutSection() {
                 </span>
                 <span className="flex items-center gap-1.5">
                   <span className="text-primary">◎</span>
-                  USD · EUR
+                  USD · EUR · BRL · AOA
                 </span>
               </div>
 
