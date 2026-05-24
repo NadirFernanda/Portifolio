@@ -7,7 +7,7 @@ import { testimonials } from "@/data/testimonials";
 import { useTranslation } from "@/i18n/LanguageContext";
 
 export function TestimonialsSection() {
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
 
   return (
     <section id="testimonials" className="py-24 px-4 bg-surface-light/30">
@@ -33,7 +33,7 @@ export function TestimonialsSection() {
 
               {/* Quote text */}
               <p className="text-sm text-muted leading-relaxed flex-1">
-                "{testimonial.quote}"
+                "{testimonial.quotes[lang]}"
               </p>
 
               {/* Divider */}
@@ -47,7 +47,7 @@ export function TestimonialsSection() {
                 <div className="min-w-0">
                   <p className="text-sm font-semibold text-text truncate">{testimonial.name}</p>
                   <p className="text-xs text-muted truncate">
-                    {testimonial.role} · {testimonial.company}
+                    {testimonial.role[lang]} · {testimonial.company}
                   </p>
                 </div>
               </div>
