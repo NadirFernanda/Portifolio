@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { MapPin, Circle, ArrowDown } from "lucide-react";
+import Image from "next/image";
 import { ContactButton } from "@/components/ui/ContactButton";
 import { person } from "@/data/person";
 import { contactLinks } from "@/data/contact";
@@ -32,12 +33,40 @@ export function HeroSection() {
       <div className="flex-1 flex items-center justify-center">
         <div className="relative z-10 max-w-4xl mx-auto text-center pt-20 w-full">
 
+          {/* Profile photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="flex justify-center mb-6"
+          >
+            <div className="relative">
+              {/* Glow ring */}
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary via-primary/60 to-transparent blur-md opacity-60" />
+              {/* Amber border ring */}
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full ring-2 ring-primary/70 ring-offset-2 ring-offset-surface overflow-hidden bg-surface-card">
+                <Image
+                  src="/images/profile/fernanda.png"
+                  alt={person.name}
+                  fill
+                  priority
+                  className="object-cover object-top"
+                  sizes="112px"
+                />
+              </div>
+              {/* Live dot */}
+              {person.availableForWork && (
+                <span className="absolute bottom-1 right-1 w-3.5 h-3.5 rounded-full bg-green-500 border-2 border-surface ring-1 ring-green-500/30" />
+              )}
+            </div>
+          </motion.div>
+
           {/* Available badge */}
           {person.availableForWork && (
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.05 }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary text-xs font-semibold mb-8 tracking-wide"
             >
               <Circle className="h-2 w-2 fill-primary animate-pulse" />
