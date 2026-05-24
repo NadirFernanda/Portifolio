@@ -2,6 +2,15 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { Resend } from "resend";
 
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 const schema = z.object({
   name: z.string().min(2).max(100),
   email: z.email(),
@@ -37,21 +46,25 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  const safeName = escapeHtml(name);
+  const safeEmail = escapeHtml(email);
+  const safeMessage = escapeHtml(message);
+
   try {
     await resend.emails.send({
       // Once you verify a domain in Resend, replace with: "Fernanda Gonçalves <contact@your-domain.com>"
       from: "Fernanda Gonçalves Portfolio <onboarding@resend.dev>",
       to,
       replyTo: email,
-      subject: `New message from ${name} — Portfolio`,
+      subject: `New message from ${safeName} — Portfolio`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #0EA5E9;">New Portfolio Contact</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Name:</strong> ${safeName}</p>
+          <p><strong>Email:</strong> ${safeEmail}</p>
           <hr style="border-color: #1E293B;" />
           <p><strong>Message:</strong></p>
-          <p style="white-space: pre-wrap;">${message}</p>
+          <p style="white-space: pre-wrap;">${safeMessage}</p>
         </div>
       `,
     });
