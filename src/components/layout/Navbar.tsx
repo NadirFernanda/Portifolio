@@ -8,7 +8,7 @@ import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { useTranslation } from "@/i18n/LanguageContext";
 import type { Language } from "@/i18n/translations";
 
-const NAV_IDS = ["home", "about", "projects", "skills", "experience", "contact"];
+const NAV_IDS = ["home", "about", "projects", "skills", "experience", "testimonials", "contact"];
 
 const LANGUAGES: { code: Language; label: string }[] = [
   { code: "en", label: "EN" },
@@ -31,6 +31,7 @@ export function Navbar() {
     { id: "projects", label: t.nav.projects },
     { id: "skills", label: t.nav.skills },
     { id: "experience", label: t.nav.experience },
+    { id: "testimonials", label: t.nav.testimonials },
     { id: "contact", label: t.nav.contact },
   ];
 

@@ -4,7 +4,7 @@ import { Resend } from "resend";
 
 const schema = z.object({
   name: z.string().min(2).max(100),
-  email: z.string().email(),
+  email: z.email(),
   message: z.string().min(10).max(2000),
 });
 
@@ -39,7 +39,8 @@ export async function POST(req: NextRequest) {
 
   try {
     await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>",
+      // Once you verify a domain in Resend, replace with: "Fernanda Gonçalves <contact@your-domain.com>"
+      from: "Fernanda Gonçalves Portfolio <onboarding@resend.dev>",
       to,
       replyTo: email,
       subject: `New message from ${name} — Portfolio`,

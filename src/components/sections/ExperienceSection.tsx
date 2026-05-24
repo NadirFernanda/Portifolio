@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, MapPin } from "lucide-react";
+import { Briefcase, GraduationCap, MapPin } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { experience } from "@/data/experience";
 import { useTranslation } from "@/i18n/LanguageContext";
@@ -33,7 +33,9 @@ export function ExperienceSection() {
               >
                 {/* Timeline dot */}
                 <div className="absolute left-0 top-1 w-8 h-8 rounded-full bg-surface-card border-2 border-primary flex items-center justify-center">
-                  <Briefcase className="h-3.5 w-3.5 text-primary" />
+                  {item.type === "education"
+                    ? <GraduationCap className="h-3.5 w-3.5 text-primary" />
+                    : <Briefcase className="h-3.5 w-3.5 text-primary" />}
                 </div>
 
                 <div className="rounded-2xl border border-border bg-surface-card p-6 hover:border-primary/30 transition-colors">

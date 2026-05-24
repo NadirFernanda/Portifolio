@@ -40,7 +40,7 @@ export interface ExperienceItem {
   id: string;
   title: string;
   company: string;
-  type: "full-time" | "freelance" | "contract";
+  type: "full-time" | "freelance" | "contract" | "education";
   startDate: string;
   endDate: string;
   location: string;

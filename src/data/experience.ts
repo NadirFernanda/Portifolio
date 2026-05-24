@@ -32,4 +32,28 @@ export const experience: ExperienceItem[] = [
       "Cloudflare",
     ],
   },
+  {
+    id: "ispbie",
+    title: "Bachelor's in Computer Engineering",
+    company: "Instituto Superior Politécnico do Bié",
+    type: "education",
+    startDate: "Mar 2020",
+    endDate: "Oct 2025",
+    location: "Cuíto, Angola",
+    responsibilities: [
+      "Studied software engineering, algorithms, data structures, and systems architecture",
+      "Developed full-stack academic projects using web technologies",
+      "Graduated as one of the standout students — later contracted by the institution to build their website and billing system",
+    ],
+    technologies: [
+      "C",
+      "Java",
+      "PHP",
+      "MySQL",
+      "HTML/CSS",
+      "JavaScript",
+      "Algorithms",
+      "Data Structures",
+    ],
+  },
 ];
