@@ -3,20 +3,42 @@ import type { ExperienceItem } from "@/types";
 export const experience: ExperienceItem[] = [
   {
     id: "freelance",
-    title: "Software Engineer",
+    title: {
+      en: "Software Engineer",
+      pt: "Engenheira de Software",
+      fr: "Ingénieure logicielle",
+    },
     company: "Freelance",
     type: "freelance",
     startDate: "Jan 2022",
     endDate: "Present",
     location: "Remote · Angola",
-    responsibilities: [
-      "Architected and delivered full-stack web platforms from scratch to production",
-      "Configured and managed Linux VPS servers with Nginx, PM2, and SSL",
-      "Designed PostgreSQL schemas and built REST APIs with Node.js and Laravel",
-      "Implemented authentication systems, payment integrations, and admin dashboards",
-      "Optimized application performance and server configurations",
-      "Worked directly with clients to gather requirements and deliver on time",
-    ],
+    responsibilities: {
+      en: [
+        "Architected and delivered full-stack web platforms from scratch to production",
+        "Configured and managed Linux VPS servers with Nginx, PM2, and SSL",
+        "Designed PostgreSQL schemas and built REST APIs with Node.js and Laravel",
+        "Implemented authentication systems, payment integrations, and admin dashboards",
+        "Optimized application performance and server configurations",
+        "Worked directly with clients to gather requirements and deliver on time",
+      ],
+      pt: [
+        "Arquitetei e entreguei plataformas web full-stack do zero à produção",
+        "Configurei e geri servidores Linux VPS com Nginx, PM2 e SSL",
+        "Desenhei schemas PostgreSQL e construí APIs REST com Node.js e Laravel",
+        "Implementei sistemas de autenticação, integrações de pagamento e painéis administrativos",
+        "Otimizei o desempenho de aplicações e configurações de servidor",
+        "Trabalhei diretamente com clientes para recolher requisitos e entregar a tempo",
+      ],
+      fr: [
+        "Conçu et livré des plateformes web full-stack de zéro à la production",
+        "Configuré et géré des serveurs Linux VPS avec Nginx, PM2 et SSL",
+        "Conçu des schémas PostgreSQL et développé des APIs REST avec Node.js et Laravel",
+        "Mis en place des systèmes d'authentification, des intégrations de paiement et des tableaux de bord admin",
+        "Optimisé les performances des applications et les configurations serveur",
+        "Travaillé directement avec les clients pour recueillir les besoins et livrer dans les délais",
+      ],
+    },
     technologies: [
       "Next.js",
       "React",
@@ -34,17 +56,33 @@ export const experience: ExperienceItem[] = [
   },
   {
     id: "ispbie",
-    title: "Bachelor's in Computer Engineering",
+    title: {
+      en: "Bachelor's in Computer Engineering",
+      pt: "Licenciatura em Engenharia Informática",
+      fr: "Licence en Génie Informatique",
+    },
     company: "Instituto Superior Politécnico do Bié",
     type: "education",
     startDate: "Mar 2020",
     endDate: "Oct 2025",
     location: "Cuíto, Angola",
-    responsibilities: [
-      "Studied software engineering, algorithms, data structures, and systems architecture",
-      "Developed full-stack academic projects using web technologies",
-      "Graduated as one of the standout students — later contracted by the institution to build their website and billing system",
-    ],
+    responsibilities: {
+      en: [
+        "Studied software engineering, algorithms, data structures, and systems architecture",
+        "Developed full-stack academic projects using web technologies",
+        "Graduated as one of the standout students — later contracted by the institution to build their website and billing system",
+      ],
+      pt: [
+        "Estudei engenharia de software, algoritmos, estruturas de dados e arquitetura de sistemas",
+        "Desenvolvi projetos académicos full-stack com tecnologias web",
+        "Graduei-me como uma das melhores estudantes — posteriormente contratada pela instituição para construir o seu site e sistema de faturação",
+      ],
+      fr: [
+        "Étudié le génie logiciel, les algorithmes, les structures de données et l'architecture des systèmes",
+        "Développé des projets académiques full-stack avec des technologies web",
+        "Diplômée parmi les meilleures étudiantes — par la suite recrutée par l'institution pour construire son site web et son système de facturation",
+      ],
+    },
     technologies: [
       "C",
       "Java",

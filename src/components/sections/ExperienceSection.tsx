@@ -7,7 +7,7 @@ import { experience } from "@/data/experience";
 import { useTranslation } from "@/i18n/LanguageContext";
 
 export function ExperienceSection() {
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
 
   return (
     <section id="experience" className="pt-16 pb-24 px-4 bg-surface-light/30">
@@ -42,11 +42,11 @@ export function ExperienceSection() {
                   {/* Header */}
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                     <div>
-                      <h3 className="font-bold text-text text-lg">{item.title}</h3>
+                      <h3 className="font-bold text-text text-lg">{item.title[lang]}</h3>
                       <div className="flex items-center gap-2 mt-1 flex-wrap">
                         <span className="text-primary font-medium text-sm">{item.company}</span>
                         <span className="text-xs px-2 py-0.5 rounded-full border border-secondary/30 text-secondary bg-secondary/10 font-medium">
-                          {item.type}
+                          {t.experience.types[item.type]}
                         </span>
                       </div>
                     </div>
@@ -61,7 +61,7 @@ export function ExperienceSection() {
 
                   {/* Responsibilities */}
                   <ul className="space-y-2 mb-4">
-                    {item.responsibilities.map((r) => (
+                    {item.responsibilities[lang].map((r) => (
                       <li key={r} className="flex items-start gap-2 text-sm text-muted">
                         <span className="text-primary mt-1.5 text-xs">▸</span>
                         {r}

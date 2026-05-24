@@ -57,10 +57,22 @@ export interface Translations {
     expert: string;
     advanced: string;
     intermediate: string;
+    categories: {
+      frontend: string;
+      backend: string;
+      database: string;
+      infrastructure: string;
+    };
   };
   experience: {
     label: string;
     title: string;
+    types: {
+      "full-time": string;
+      freelance: string;
+      contract: string;
+      education: string;
+    };
   };
   testimonials: {
     label: string;
@@ -178,10 +190,22 @@ export const translations: Record<Language, Translations> = {
       expert: "Expert",
       advanced: "Advanced",
       intermediate: "Intermediate",
+      categories: {
+        frontend: "Frontend",
+        backend: "Backend",
+        database: "Database",
+        infrastructure: "Infrastructure",
+      },
     },
     experience: {
       label: "Experience",
       title: "Professional Background",
+      types: {
+        "full-time": "Full-time",
+        freelance: "Freelance",
+        contract: "Contract",
+        education: "Education",
+      },
     },
     testimonials: {
       label: "Testimonials",
@@ -299,10 +323,22 @@ export const translations: Record<Language, Translations> = {
       expert: "Especialista",
       advanced: "Avançado",
       intermediate: "Intermediário",
+      categories: {
+        frontend: "Frontend",
+        backend: "Backend",
+        database: "Base de Dados",
+        infrastructure: "Infraestrutura",
+      },
     },
     experience: {
       label: "Experiência",
       title: "Histórico Profissional",
+      types: {
+        "full-time": "Tempo Integral",
+        freelance: "Freelance",
+        contract: "Contrato",
+        education: "Formação",
+      },
     },
     testimonials: {
       label: "Testemunhos",
@@ -420,10 +456,22 @@ export const translations: Record<Language, Translations> = {
       expert: "Expert",
       advanced: "Avancé",
       intermediate: "Intermédiaire",
+      categories: {
+        frontend: "Frontend",
+        backend: "Backend",
+        database: "Base de données",
+        infrastructure: "Infrastructure",
+      },
     },
     experience: {
       label: "Expérience",
       title: "Parcours professionnel",
+      types: {
+        "full-time": "Temps plein",
+        freelance: "Freelance",
+        contract: "Contrat",
+        education: "Formation",
+      },
     },
     testimonials: {
       label: "Témoignages",

@@ -42,7 +42,9 @@ export function SkillsSection() {
                   <div className="p-2 rounded-lg bg-primary/10">
                     <Icon className="h-4 w-4 text-primary" />
                   </div>
-                  <h3 className="font-semibold text-text">{category.title}</h3>
+                  <h3 className="font-semibold text-text">
+                    {t.skills.categories[category.id as keyof typeof t.skills.categories] ?? category.title}
+                  </h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (

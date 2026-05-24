@@ -36,15 +36,17 @@ export interface SkillCategory {
   skills: Skill[];
 }
 
+import type { Language } from "@/i18n/translations";
+
 export interface ExperienceItem {
   id: string;
-  title: string;
+  title: Record<Language, string>;
   company: string;
   type: "full-time" | "freelance" | "contract" | "education";
   startDate: string;
   endDate: string;
   location: string;
-  responsibilities: string[];
+  responsibilities: Record<Language, string[]>;
   technologies: string[];
 }
 
