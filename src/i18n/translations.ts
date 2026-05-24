@@ -61,6 +61,11 @@ export interface Translations {
     label: string;
     title: string;
   };
+  testimonials: {
+    label: string;
+    title: string;
+    description: string;
+  };
   contact: {
     label: string;
     title: string;
@@ -175,6 +180,11 @@ export const translations: Record<Language, Translations> = {
     experience: {
       label: "Experience",
       title: "Professional Background",
+    },
+    testimonials: {
+      label: "Testimonials",
+      title: "What Clients Say",
+      description: "Words from the people who worked with me and use the systems I built.",
     },
     contact: {
       label: "Contact",
@@ -291,6 +301,11 @@ export const translations: Record<Language, Translations> = {
       label: "Experiência",
       title: "Histórico Profissional",
     },
+    testimonials: {
+      label: "Testemunhos",
+      title: "O Que Dizem os Clientes",
+      description: "Palavras de quem trabalhou comigo e usa os sistemas que construí.",
+    },
     contact: {
       label: "Contato",
       title: "Disponível Agora — Vamos Conversar",
@@ -405,6 +420,11 @@ export const translations: Record<Language, Translations> = {
     experience: {
       label: "Expérience",
       title: "Parcours professionnel",
+    },
+    testimonials: {
+      label: "Témoignages",
+      title: "Ce que disent les clients",
+      description: "Les mots de ceux qui ont travaillé avec moi et utilisent les systèmes que j'ai construits.",
     },
     contact: {
       label: "Contact",
