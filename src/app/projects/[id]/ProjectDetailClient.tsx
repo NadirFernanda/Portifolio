@@ -106,22 +106,37 @@ export function ProjectDetailClient({ project }: { project: Project }) {
             <motion.div {...fadeUp(0.08)}>
               <button
                 onClick={() => setLightboxIndex(0)}
-                className="relative w-full rounded-2xl overflow-hidden border border-border bg-surface-card mb-10 group cursor-zoom-in block"
+                className="relative w-full rounded-2xl overflow-hidden border border-border mb-10 group cursor-zoom-in block bg-surface-card"
+                style={{ minHeight: "280px", maxHeight: "560px", height: "56.25vw" }}
                 aria-label="Open screenshot"
               >
-                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                  <Image
-                    src={screenshots[0]}
-                    alt={`${project.name} screenshot`}
-                    fill
-                    priority
-                    quality={90}
-                    className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-                    sizes="(max-width: 768px) 100vw, 1024px"
-                  />
+                {/* Blurred background — fills the space when screenshot is portrait */}
+                <Image
+                  src={screenshots[0]}
+                  alt=""
+                  fill
+                  aria-hidden
+                  className="object-cover scale-110 blur-2xl opacity-40 saturate-150"
+                  sizes="1024px"
+                />
+                {/* Gradient vignette over the blur */}
+                <div className="absolute inset-0 bg-gradient-to-t from-surface-card/80 via-transparent to-surface-card/40" />
+                {/* Actual sharp screenshot */}
+                <div className="absolute inset-0 flex items-center justify-center p-4">
+                  <div className="relative h-full w-full">
+                    <Image
+                      src={screenshots[0]}
+                      alt={`${project.name} screenshot`}
+                      fill
+                      priority
+                      quality={90}
+                      className="object-contain transition-transform duration-500 group-hover:scale-[1.02] drop-shadow-2xl"
+                      sizes="(max-width: 768px) 100vw, 1024px"
+                    />
+                  </div>
                 </div>
                 {/* zoom hint */}
-                <div className="absolute bottom-3 right-3 bg-surface/70 backdrop-blur-sm border border-border text-muted text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute bottom-3 right-3 bg-surface/70 backdrop-blur-sm border border-border text-muted text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity z-10">
                   🔍 Click to expand
                 </div>
               </button>
