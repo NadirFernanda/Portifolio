@@ -189,10 +189,10 @@ export const projects: Project[] = [
     name: "AngolWifi — Management System",
     tagline: "Internal company management platform",
     description:
-      "Comprehensive internal management system for an Angolan ISP — covering clients, service plans, billing, technical support, and MikroTik router integration. Payments via EMIS (Multicaixa Express / GPO), automatic plan suspension via scheduled tasks, and WhatsApp notifications for alerts and billing.",
+      "Internal management system for an Angolan ISP — covering clients, service plans, vouchers, technical support, and direct MikroTik router control. WhatsApp notifications for expiry alerts and billing reminders, with scheduled automation running around the clock.",
     problem:
-      "AngolWifi was managing clients, contracts, and support through disconnected tools. There was no automation for plan expiration, no audit trail, and no direct integration with MikroTik routers or the local EMIS payment gateway.",
-    role: "Full development: system architecture, backend services, frontend, MikroTik RouterOS API and EMIS integrations, scheduled automation, and internal deployment.",
+      "AngolWifi was managing clients, contracts, and support through disconnected tools. There was no automation for plan expiration, no audit trail, and no direct integration with MikroTik routers.",
+    role: "Full development: system architecture, backend services, frontend, MikroTik RouterOS API integration, scheduled automation, and internal deployment.",
     stack: [
       "Laravel 12",
       "PHP 8.2",
@@ -207,7 +207,6 @@ export const projects: Project[] = [
     ],
     highlights: [
       "MikroTik RouterOS API over raw TCP/8728 — no third-party library, direct binary protocol implementation with full control over router state",
-      "EMIS payment gateway integration (Multicaixa Express / GPO) — built specifically for the Angolan market, no generic payment abstraction",
       "WhatsApp notification layer fully abstracted behind a service interface — swap Twilio, UltraMsg, or Z-API without touching any business logic",
       "Spatie Activity Log for immutable audit trail — every change records who, what, and when",
       "Granular role-based access with Spatie Permission (Administrador, Técnico, etc.)",
