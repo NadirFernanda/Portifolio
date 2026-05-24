@@ -11,8 +11,8 @@ export function AboutSection() {
 
   const stats = [
     { label: t.about.statsYearsExp, value: `${person.yearsOfExperience}+`, color: "text-primary" },
-    { label: t.about.statsProjects, value: "5+", color: "text-secondary" },
-    { label: t.about.statsServers, value: "10+", color: "text-primary-light" },
+    { label: t.about.statsProjects, value: "6", color: "text-secondary" },
+    { label: t.about.statsServers, value: "5+", color: "text-primary-light" },
   ];
 
   return (
