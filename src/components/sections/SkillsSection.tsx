@@ -18,7 +18,7 @@ export function SkillsSection() {
   const { t } = useTranslation();
 
   return (
-    <section id="skills" className="py-24 px-4">
+    <section id="skills" className="pt-24 pb-12 px-4">
       <div className="max-w-6xl mx-auto">
         <SectionHeader
           label={t.skills.label}
@@ -55,17 +55,19 @@ export function SkillsSection() {
         </div>
 
         {/* Legend */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-muted">
-          <span className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-primary inline-block" />
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-5 px-4 py-3 rounded-xl border border-border bg-surface-card/50 w-fit mx-auto">
+          <span className="flex items-center gap-2 text-xs font-medium text-text/70">
+            <span className="w-2.5 h-2.5 rounded-full bg-primary inline-block flex-shrink-0" />
             {t.skills.expert}
           </span>
-          <span className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-secondary inline-block" />
+          <span className="w-px h-3 bg-border" />
+          <span className="flex items-center gap-2 text-xs font-medium text-text/70">
+            <span className="w-2.5 h-2.5 rounded-full bg-secondary inline-block flex-shrink-0" />
             {t.skills.advanced}
           </span>
-          <span className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-border inline-block" />
+          <span className="w-px h-3 bg-border" />
+          <span className="flex items-center gap-2 text-xs font-medium text-text/70">
+            <span className="w-2.5 h-2.5 rounded-full bg-border inline-block flex-shrink-0" />
             {t.skills.intermediate}
           </span>
         </div>

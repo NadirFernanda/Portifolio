@@ -10,7 +10,7 @@ export function ExperienceSection() {
   const { t } = useTranslation();
 
   return (
-    <section id="experience" className="py-24 px-4 bg-surface-light/30">
+    <section id="experience" className="pt-16 pb-24 px-4 bg-surface-light/30">
       <div className="max-w-4xl mx-auto">
         <SectionHeader
           label={t.experience.label}
