@@ -146,7 +146,7 @@ export function HeroSection() {
             </a>
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 rounded-xl border border-border text-muted hover:border-primary/50 hover:text-primary px-6 py-3 text-sm font-medium transition-all"
+              className="inline-flex items-center gap-2 rounded-xl border border-text/20 text-text hover:border-primary/60 hover:text-primary px-6 py-3 text-sm font-semibold transition-all"
             >
               {t.hero.seeMyWork}
             </a>
