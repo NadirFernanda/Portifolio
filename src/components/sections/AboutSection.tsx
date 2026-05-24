@@ -43,13 +43,13 @@ export function AboutSection() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/15 to-transparent rounded-bl-full" />
 
               {/* Photo */}
-              <div className="w-24 h-24 rounded-2xl overflow-hidden mb-6 ring-2 ring-primary/30 shadow-lg shadow-primary/10 flex-shrink-0">
+              <div className="relative w-40 h-40 rounded-full overflow-hidden mb-6 ring-2 ring-primary/50 ring-offset-2 ring-offset-surface-card shadow-xl shadow-primary/15 flex-shrink-0">
                 <Image
                   src={person.photo}
                   alt={person.name}
-                  width={96}
-                  height={96}
-                  className="w-full h-full object-cover object-top"
+                  fill
+                  className="object-cover object-top"
+                  sizes="160px"
                   priority
                 />
               </div>
