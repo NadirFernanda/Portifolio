@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
@@ -20,6 +21,9 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const activeSection = useScrollSpy(NAV_IDS);
   const { lang, setLang, t } = useTranslation();
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const href = (id: string) => isHome ? `#${id}` : `/#${id}`;
 
   const navLinks = [
     { id: "home", label: t.nav.home },
@@ -47,7 +51,7 @@ export function Navbar() {
     >
       <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-1.5">
+        <a href={href("home")} className="flex items-center gap-1.5">
           <span className="text-sm font-black font-mono">
             <span className="text-primary">fernanda</span>
             <span className="text-muted">.dev</span>
@@ -59,7 +63,7 @@ export function Navbar() {
           {navLinks.map((link) => (
             <li key={link.id}>
               <a
-                href={`#${link.id}`}
+                href={href(link.id)}
                 className={cn(
                   "px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200",
                   activeSection === link.id
@@ -95,7 +99,7 @@ export function Navbar() {
           </div>
 
           <a
-            href="#contact"
+            href={href("contact")}
             className="inline-flex items-center gap-2 rounded-xl border border-primary/50 text-primary hover:bg-primary hover:text-surface hover:border-primary px-4 py-1.5 text-sm font-bold transition-all"
           >
             {t.nav.hireMe}
@@ -119,7 +123,7 @@ export function Navbar() {
             {navLinks.map((link) => (
               <li key={link.id}>
                 <a
-                  href={`#${link.id}`}
+                  href={href(link.id)}
                   onClick={() => setMenuOpen(false)}
                   className={cn(
                     "block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors",
@@ -134,7 +138,7 @@ export function Navbar() {
             ))}
             <li className="pt-2">
               <a
-                href="#contact"
+                href={href("contact")}
                 onClick={() => setMenuOpen(false)}
                 className="block text-center rounded-xl bg-primary text-surface font-bold px-4 py-2.5 text-sm"
               >
