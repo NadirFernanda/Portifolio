@@ -85,6 +85,7 @@ export function HeroSection() {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
+              paddingBottom: "0.12em",
             }}
           >
             {person.name}
