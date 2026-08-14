@@ -9,7 +9,7 @@ export const projects: Project[] = [
       "Full-stack platform connecting healthcare institutions with freelance health professionals in Angola. Features a complete hire-to-payment flow: shift scheduling, escrow-based payments via Multicaixa Express, earnings dashboard, and a full administrative panel — all server-rendered and deployed on a Linux VPS.",
     problem:
       "Healthcare institutions in Angola had no reliable, digital way to hire qualified freelance professionals on demand. Existing solutions were generic and didn't account for local payment infrastructure (no Stripe/PayPal), Angolan ID validation, or local terminology.",
-    role: "Full architecture ownership: database schema, server actions, frontend, custom payment logic, Angolan BI validation, Linux server configuration, and production deploy.",
+    role: "Designed and built by me — database schema, server actions, frontend, custom payment logic, Angolan BI validation, Linux server configuration, and production deploy — bringing in contractors when the scope called for it.",
     stack: [
       "Next.js 16",
       "React 19",
@@ -55,7 +55,7 @@ export const projects: Project[] = [
       "Monorepo with two independent Laravel apps: an online shop (Loja) for end-customers to buy plans and vouchers, and a backoffice management system (SGA) for internal operations. They communicate via internal HTTP API — if the shop goes down, the SGA keeps running. Payments via EMIS GPO (Multicaixa Express + Angolan bank card).",
     problem:
       "The company needed both a public-facing shop and an internal management system. Coupling them would mean one failure taking down both. They also needed a PCI-DSS-compliant payment flow in a market where only EMIS GPO is a viable gateway.",
-    role: "Full development of both apps: architecture decisions, backend, frontend, EMIS GPO payment integration, server configuration, and production deploy.",
+    role: "Designed and built both apps — architecture decisions, backend, frontend, EMIS GPO payment integration, server configuration, and production deploy.",
     stack: [
       "Laravel 12",
       "PHP 8.4",
@@ -98,7 +98,7 @@ export const projects: Project[] = [
       "Institutional website for an internet service provider in Angola, built with a full Laravel backend, admin panel, and server-side rendering via Blade. Covers service presentation, lead capture, and content management — deployed on a Linux VPS with Nginx and PHP-FPM.",
     problem:
       "The provider had no professional online presence, losing potential clients searching online. They also needed an admin panel to manage content without developer intervention.",
-    role: "Full development: information architecture, backend, admin panel, responsive frontend, server configuration, and production deploy.",
+    role: "Designed and built: information architecture, backend, admin panel, responsive frontend, server configuration, and production deploy.",
     stack: [
       "Laravel 11",
       "PHP 8.4",
@@ -166,7 +166,7 @@ export const projects: Project[] = [
       "Internal invoice management system built for ISP BIE, handling client billing, invoice generation, payment tracking, and financial reporting for the company's internet service operations.",
     problem:
       "The company was managing invoices manually via spreadsheets, leading to errors, delays, and no real-time visibility into payment status or outstanding balances.",
-    role: "Full development: database design, backend logic, UI and internal deploy.",
+    role: "Designed and built: database design, backend logic, UI, and internal deploy — bringing in contractors when the scope called for it.",
     stack: ["Laravel", "Tailwind CSS", "PostgreSQL"],
     highlights: [
       "Automated invoice generation per client",
@@ -192,7 +192,7 @@ export const projects: Project[] = [
       "Internal management system for an Angolan ISP — covering clients, service plans, vouchers, technical support, and direct MikroTik router control. WhatsApp notifications for expiry alerts and billing reminders, with scheduled automation running around the clock.",
     problem:
       "AngolWifi was managing clients, contracts, and support through disconnected tools. There was no automation for plan expiration, no audit trail, and no direct integration with MikroTik routers.",
-    role: "Full development: system architecture, backend services, frontend, MikroTik RouterOS API integration, scheduled automation, and internal deployment.",
+    role: "Designed and built: system architecture, backend services, frontend, MikroTik RouterOS API integration, scheduled automation, and internal deployment — bringing in contractors when the scope called for it.",
     stack: [
       "Laravel 12",
       "PHP 8.2",
@@ -230,7 +230,7 @@ export const projects: Project[] = [
       "Institutional website and internal management system for a higher-education institute in Angola. Serves two audiences: the public (courses, news, alumni portal, scientific journal, open tenders) and internal staff across seven distinct roles who run the entire entrance-exam admissions pipeline — application intake, payment confirmation, document review and signing, exam room assignment, anonymized grading, and results.",
     problem:
       "Entrance-exam admissions were run on paper — application forms, payment slips, room assignments, and grade sheets — with no way to guarantee grading integrity. Professors needed to grade without seeing who they were grading, and every step of the bureaucratic approval chain needed to be logged and auditable across legally distinct actors (Secretaria, DAAC, Técnico, Subcomissões, Presidência).",
-    role: "Full ownership: information architecture, backend, admissions/grading workflow design, WhatsApp integration, PDF generation, server configuration, and production deploy.",
+    role: "Designed and built: information architecture, backend, admissions/grading workflow design, WhatsApp integration, PDF generation, server configuration, and production deploy — bringing in contractors when the scope called for it.",
     stack: [
       "Laravel 11",
       "PHP 8.4",
@@ -272,7 +272,7 @@ export const projects: Project[] = [
       "Corporate web platform for an Angolan mining consultancy and training company, serving as the digital front door for a business selling technical consulting, mining equipment, and courses to clients across Angola, Mozambique, Namibia, and the DRC. Public visitors browse services, an equipment catalogue, courses, team and project case studies, and submit contact/quote requests. Staff manage every piece of content through a full back-office admin panel — no code changes required.",
     problem:
       "A static brochure site couldn't keep up with a business that needed to publish new courses, toggle equipment availability, and curate client testimonials on its own. The company needed a self-service, multilingual (PT/EN/FR) platform that felt credible to prospective clients while giving the non-technical operations team full control over content.",
-    role: "Full-stack solo build: architecture, backend, admin CRUD panel, multilingual content system, and production deploy.",
+    role: "Designed and built: architecture, backend, admin CRUD panel, multilingual content system, and production deploy.",
     stack: ["Laravel 13", "PHP 8.3", "Blade", "Alpine.js", "Tailwind CSS 4", "Vite", "PHPUnit"],
     highlights: [
       "Custom column-based i18n (no translation package) — translatable models store _en/_fr sibling columns resolved through Eloquent accessors with automatic fallback to Portuguese",
@@ -302,7 +302,7 @@ export const projects: Project[] = [
       "Internal stock and sales management system (a lightweight ERP) for a retail store selling clothing, footwear, cosmetics, accessories, and school supplies in Angola. Covers the full inventory lifecycle — goods receiving, stock adjustments, physical inventory counts, point-of-sale checkout, dashboards and reports — with role-based access for Administrator, Warehouse Manager, and Salesperson/Cashier profiles. Installable as a PWA.",
     problem:
       "The store was tracking stock and sales through manual, spreadsheet-based processes with no real-time visibility, no audit trail, and no way to prevent overselling or restrict sensitive data (like purchase cost) from staff who shouldn't see it.",
-    role: "Full-stack solo build: architecture, backend API, frontend SPA/PWA, database schema, deployment, and operations (backups, systemd services).",
+    role: "Designed and built: architecture, backend API, frontend SPA/PWA, database schema, deployment, and operations (backups, systemd services) — bringing in contractors when the scope called for it.",
     stack: [
       "Laravel 12",
       "PHP 8.4",

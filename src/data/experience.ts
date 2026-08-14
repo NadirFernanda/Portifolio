@@ -4,9 +4,9 @@ export const experience: ExperienceItem[] = [
   {
     id: "freelance",
     title: {
-      en: "Software Engineer",
-      pt: "Engenheira de Software",
-      fr: "Ingénieure logicielle",
+      en: "Computer Engineer",
+      pt: "Engenheira Informática",
+      fr: "Ingénieure Informatique",
     },
     company: "Freelance",
     type: "freelance",

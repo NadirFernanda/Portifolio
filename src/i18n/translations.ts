@@ -130,20 +130,20 @@ export const translations: Record<Language, Translations> = {
     hero: {
       available: "Available for new opportunities",
       tagline:
-        "6 production systems. Full ownership — from database schema and REST API to Linux server config and deploy. One engineer, zero handoffs.",
+        "9 production systems, designed and built by me — from database schema and REST API to Linux server config and deploy. I bring in contractors when the scope calls for it, and lead the team.",
       getInTouch: "Get in Touch",
       seeMyWork: "See My Work",
       scroll: "scroll",
     },
     person: {
-      title: "Software Engineer",
+      title: "Computer Engineer",
       subtitle: "Full Stack Developer · Systems Architect",
-      bio: "6 systems currently running in production — all designed, coded, deployed, and maintained by me. No agency, no team, no outsourcing.\n\nI handle the full stack: REST APIs, frontend interfaces, PostgreSQL schemas, Linux server configuration, Nginx, PM2, and SSL. Healthcare platforms, ISP management systems, institutional websites — I've shipped across all three sectors.\n\nBased in Angola (UTC+1). Available for remote contracts and full-time positions globally.",
+      bio: "9 systems currently running in production — all designed and built by me. I bring in contractors on a project basis when the scope requires it, coordinating the team from architecture to deploy.\n\nI handle architecture, REST APIs, frontend interfaces, PostgreSQL schemas, Linux server configuration, Nginx, PM2, and SSL. Healthcare platforms, ISP management systems, institutional websites — I've shipped across all three sectors.\n\nBased in Angola (UTC+1). Available for remote contracts and full-time positions globally.",
     },
     about: {
       label: "About",
       title: "Who I Am",
-      description: "A software engineer who ships — from the first commit to the live server.",
+      description: "A computer engineer who ships — from the first commit to the live server.",
       statsYearsExp: "Years Shipping to Production",
       statsProjects: "Live Production Systems",
       statsServers: "Linux Servers Configured",
@@ -215,7 +215,7 @@ export const translations: Record<Language, Translations> = {
     contact: {
       label: "Contact",
       title: "Available Now — Let's Talk",
-      description: "Looking for a full-stack engineer who owns the full delivery? I respond within 24 hours.",
+      description: "Looking for a full-stack engineer who leads the full delivery? I respond within 24 hours.",
       availability:
         "Open to full-time remote, part-time contracts, and freelance projects. UTC+1 (Angola) · Accepts USD, EUR, BRL and AOA · Response within 24h.",
       connectDirectly: "Connect directly",
@@ -263,20 +263,20 @@ export const translations: Record<Language, Translations> = {
     hero: {
       available: "Disponível para novas oportunidades",
       tagline:
-        "6 sistemas em produção. Responsabilidade total — do schema da base de dados e API REST à configuração do servidor Linux e deploy. Uma engenheira, zero entregas parciais.",
+        "9 sistemas em produção, concebidos e desenvolvidos por mim — do schema da base de dados e API REST à configuração do servidor Linux e deploy. Subcontrato quando o âmbito exige, e coordeno a equipa.",
       getInTouch: "Entrar em Contato",
       seeMyWork: "Ver Meu Trabalho",
       scroll: "rolar",
     },
     person: {
-      title: "Engenheira de Software",
+      title: "Engenheira Informática",
       subtitle: "Desenvolvedora Full Stack · Arquiteta de Sistemas",
-      bio: "6 sistemas actualmente em produção — todos concebidos, desenvolvidos, implantados e mantidos por mim. Sem agência, sem equipa, sem outsourcing.\n\nTrato de tudo: APIs REST, interfaces frontend, schemas PostgreSQL, configuração de servidor Linux, Nginx, PM2 e SSL. Plataformas de saúde, sistemas de gestão de ISP, sites institucionais — já entreguei nos três sectores.\n\nBaseada em Angola (UTC+1). Disponível para contratos remotos e posições full-time globalmente.",
+      bio: "9 sistemas actualmente em produção — todos concebidos e desenvolvidos por mim. Subcontrato pessoal pontualmente quando o âmbito do projecto exige, coordenando a equipa da arquitectura ao deploy.\n\nTrato de arquitectura, APIs REST, interfaces frontend, schemas PostgreSQL, configuração de servidor Linux, Nginx, PM2 e SSL. Plataformas de saúde, sistemas de gestão de ISP, sites institucionais — já entreguei nos três sectores.\n\nBaseada em Angola (UTC+1). Disponível para contratos remotos e posições full-time globalmente.",
     },
     about: {
       label: "Sobre",
       title: "Quem Sou",
-      description: "Uma engenheira de software que entrega — do primeiro commit ao servidor em produção.",
+      description: "Uma engenheira informática que entrega — do primeiro commit ao servidor em produção.",
       statsYearsExp: "Anos a Entregar em Produção",
       statsProjects: "Sistemas em Produção",
       statsServers: "Servidores Linux Configurados",
@@ -348,7 +348,7 @@ export const translations: Record<Language, Translations> = {
     contact: {
       label: "Contato",
       title: "Disponível Agora — Vamos Conversar",
-      description: "Precisa de uma engenheira full-stack que entrega o projecto completo? Respondo em até 24 horas.",
+      description: "Precisa de uma engenheira full-stack que lidera o projecto completo? Respondo em até 24 horas.",
       availability:
         "Aberta a full-time remoto, contratos de meio período e freelance. UTC+1 (Angola) · Aceita USD, EUR, BRL e AOA · Resposta em até 24h.",
       connectDirectly: "Conecte diretamente",
@@ -396,20 +396,20 @@ export const translations: Record<Language, Translations> = {
     hero: {
       available: "Disponible pour de nouvelles opportunités",
       tagline:
-        "6 systèmes en production. Responsabilité totale — du schéma de base de données et de l'API REST à la configuration serveur Linux et au déploiement. Une ingénieure, zéro sous-traitance.",
+        "9 systèmes en production, conçus et développés par moi — du schéma de base de données et de l'API REST à la configuration serveur Linux et au déploiement. Je fais appel à des prestataires selon les besoins, et je coordonne l'équipe.",
       getInTouch: "Me contacter",
       seeMyWork: "Voir mes projets",
       scroll: "défiler",
     },
     person: {
-      title: "Ingénieure logicielle",
+      title: "Ingénieure Informatique",
       subtitle: "Développeuse Full Stack · Architecte systèmes",
-      bio: "6 systèmes actuellement en production — tous conçus, développés, déployés et maintenus par moi. Sans agence, sans équipe, sans externalisation.\n\nJe gère l'intégralité du stack : APIs REST, interfaces frontend, schémas PostgreSQL, configuration serveur Linux, Nginx, PM2 et SSL. Plateformes de santé, systèmes de gestion ISP, sites institutionnels — j'ai livré dans ces trois secteurs.\n\nBasée en Angola (UTC+1). Disponible pour des contrats à distance et des postes à temps plein dans le monde entier.",
+      bio: "9 systèmes actuellement en production — tous conçus et développés par moi. Je fais appel à des prestataires ponctuellement lorsque l'ampleur du projet l'exige, en coordonnant l'équipe de l'architecture au déploiement.\n\nJe gère l'architecture, les APIs REST, les interfaces frontend, les schémas PostgreSQL, la configuration serveur Linux, Nginx, PM2 et SSL. Plateformes de santé, systèmes de gestion ISP, sites institutionnels — j'ai livré dans ces trois secteurs.\n\nBasée en Angola (UTC+1). Disponible pour des contrats à distance et des postes à temps plein dans le monde entier.",
     },
     about: {
       label: "À propos",
       title: "Qui je suis",
-      description: "Une ingénieure logicielle qui livre — du premier commit au serveur en production.",
+      description: "Une ingénieure informatique qui livre — du premier commit au serveur en production.",
       statsYearsExp: "Ans à livrer en production",
       statsProjects: "Systèmes en production",
       statsServers: "Serveurs Linux configurés",
@@ -481,7 +481,7 @@ export const translations: Record<Language, Translations> = {
     contact: {
       label: "Contact",
       title: "Disponible maintenant — parlons-en",
-      description: "Vous cherchez une ingénieure full-stack qui prend en charge la livraison complète ? Je réponds sous 24 heures.",
+      description: "Vous cherchez une ingénieure full-stack qui pilote la livraison complète ? Je réponds sous 24 heures.",
       availability:
         "Ouverte aux postes à distance à temps plein, contrats à temps partiel et freelance. UTC+1 (Angola) · Accepte USD, EUR, BRL et AOA · Réponse sous 24h.",
       connectDirectly: "Contacter directement",

@@ -23,13 +23,13 @@ const OG_IMAGE = `${SITE_URL}/images/og-image.jpg`;
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Fernanda Gonçalves | Software Engineer",
+    default: "Fernanda Gonçalves | Computer Engineer",
     template: "%s | Fernanda Gonçalves",
   },
   description:
-    "Software Engineer with 4+ years building scalable web systems, REST APIs, and Linux infrastructure. Full stack development from architecture to production deploy. Open to remote opportunities.",
+    "Computer Engineer with 4+ years building scalable web systems, REST APIs, and Linux infrastructure. Full stack development from architecture to production deploy. Open to remote opportunities.",
   keywords: [
-    "Software Engineer",
+    "Computer Engineer",
     "Full Stack Developer",
     "Systems Architect",
     "Next.js",
@@ -47,14 +47,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "Fernanda Gonçalves",
-    title: "Fernanda Gonçalves | Software Engineer",
+    title: "Fernanda Gonçalves | Computer Engineer",
     description:
       "Building scalable web systems, APIs, and Linux infrastructure — from architecture to production deploy.",
-    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Fernanda Gonçalves — Software Engineer" }],
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Fernanda Gonçalves — Computer Engineer" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fernanda Gonçalves | Software Engineer",
+    title: "Fernanda Gonçalves | Computer Engineer",
     description:
       "Building scalable web systems, APIs, and Linux infrastructure.",
     images: [OG_IMAGE],
@@ -84,7 +84,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Fernanda Gonçalves",
-              jobTitle: "Software Engineer",
+              jobTitle: "Computer Engineer",
               url: SITE_URL,
               sameAs: [
                 "https://www.linkedin.com/in/fernanda-gon%C3%A7alves-70892a350/",
