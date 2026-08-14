@@ -21,6 +21,9 @@ const projectGradients: Record<string, string> = {
   "ispbie-billing":        "from-sky-900/60 via-surface-card to-surface-card",
   "angolawifi-management": "from-violet-900/60 via-surface-card to-surface-card",
   portfolio:               "from-emerald-900/60 via-surface-card to-surface-card",
+  "24horas":                "from-blue-900/60 via-surface-card to-surface-card",
+  amis:                    "from-yellow-900/60 via-surface-card to-surface-card",
+  "acm-calunga":           "from-teal-900/60 via-surface-card to-surface-card",
 };
 
 const projectAccent: Record<string, string> = {
@@ -30,6 +33,9 @@ const projectAccent: Record<string, string> = {
   "ispbie-billing":        "#38BDF8",
   "angolawifi-management": "#A78BFA",
   portfolio:               "#10B981",
+  "24horas":                "#3B82F6",
+  amis:                    "#CA8A04",
+  "acm-calunga":           "#14B8A6",
 };
 
 interface ProjectCardProps {

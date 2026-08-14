@@ -4,7 +4,7 @@ import { projects } from "@/data/projects";
 import { ProjectDetailClient } from "./ProjectDetailClient";
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://portifolio-nine-azure-22.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.fernandagoncalves.dev";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ id: p.id }));
