@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { person } from "@/data/person";
+import { projects } from "@/data/projects";
 import { useTranslation } from "@/i18n/LanguageContext";
 
 export function AboutSection() {
@@ -11,7 +12,7 @@ export function AboutSection() {
 
   const stats = [
     { label: t.about.statsYearsExp, value: `${person.yearsOfExperience}+`, color: "text-primary" },
-    { label: t.about.statsProjects, value: "6", color: "text-secondary" },
+    { label: t.about.statsProjects, value: `${projects.length}`, color: "text-secondary" },
     { label: t.about.statsServers, value: "5+", color: "text-primary-light" },
   ];
 

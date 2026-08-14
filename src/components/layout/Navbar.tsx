@@ -41,6 +41,13 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   return (
     <header
       className={cn(
@@ -119,7 +126,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-surface/95 backdrop-blur-xl border-b border-border px-4 py-4">
+        <div className="md:hidden fixed inset-x-0 top-16 bottom-0 bg-surface backdrop-blur-xl overflow-y-auto px-4 py-4">
           <ul className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <li key={link.id}>

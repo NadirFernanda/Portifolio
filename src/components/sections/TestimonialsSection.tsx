@@ -46,7 +46,7 @@ export function TestimonialsSection() {
                 {/* Name + role */}
                 <div className="min-w-0">
                   <p className="text-sm font-semibold text-text truncate">{testimonial.name}</p>
-                  <p className="text-xs text-muted truncate">
+                  <p className="text-xs text-muted line-clamp-2">
                     {testimonial.role[lang]} · {testimonial.company}
                   </p>
                 </div>
