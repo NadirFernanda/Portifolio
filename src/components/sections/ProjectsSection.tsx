@@ -32,6 +32,23 @@ export function ProjectsSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* Closing CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mt-14 flex flex-col items-center gap-4 text-center"
+        >
+          <p className="text-lg font-semibold text-text">{t.projects.ctaTitle}</p>
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary hover:bg-primary-dark text-surface font-bold px-6 py-3 text-sm transition-all hover:scale-105 shadow-lg shadow-primary/20"
+          >
+            {t.projects.ctaButton}
+          </a>
+        </motion.div>
       </div>
     </section>
   );

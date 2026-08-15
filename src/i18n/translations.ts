@@ -49,6 +49,8 @@ export interface Translations {
     liveDemo: string;
     privateSystem: string;
     viewDetails: string;
+    ctaTitle: string;
+    ctaButton: string;
   };
   skills: {
     label: string;
@@ -182,6 +184,8 @@ export const translations: Record<Language, Translations> = {
       liveDemo: "Live Demo",
       privateSystem: "Private System",
       viewDetails: "View details",
+      ctaTitle: "Have a project in mind?",
+      ctaButton: "Let's discuss it",
     },
     skills: {
       label: "Stack",
@@ -315,6 +319,8 @@ export const translations: Record<Language, Translations> = {
       liveDemo: "Demo ao Vivo",
       privateSystem: "Sistema Privado",
       viewDetails: "Ver detalhes",
+      ctaTitle: "Tem um projecto em mente?",
+      ctaButton: "Vamos conversar",
     },
     skills: {
       label: "Stack",
@@ -448,6 +454,8 @@ export const translations: Record<Language, Translations> = {
       liveDemo: "Démo en direct",
       privateSystem: "Système privé",
       viewDetails: "Voir les détails",
+      ctaTitle: "Un projet en tête ?",
+      ctaButton: "Discutons-en",
     },
     skills: {
       label: "Stack",
