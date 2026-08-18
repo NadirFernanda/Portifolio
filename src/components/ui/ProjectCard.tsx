@@ -58,7 +58,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
       />
 
       {/* Thumbnail */}
-      <div className={`relative h-52 overflow-hidden ${project.images.thumbnail ? "bg-surface-card" : `bg-gradient-to-br ${gradient} flex items-center justify-center`}`}>
+      <div className={`relative h-52 overflow-hidden pointer-events-none ${project.images.thumbnail ? "bg-surface-card" : `bg-gradient-to-br ${gradient} flex items-center justify-center`}`}>
 
         {project.images.thumbnail ? (
           <>
@@ -155,14 +155,14 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
         </p>
 
         {/* Footer: links + "View details" indicator */}
-        <div className="mt-4 pt-3 border-t border-border flex items-center justify-between relative z-10">
+        <div className="mt-4 pt-3 border-t border-border flex items-center justify-between relative z-10 pointer-events-none">
           <div className="flex gap-4">
             {project.links.demo ? (
               <a
                 href={project.links.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-primary-light transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-primary-light transition-colors pointer-events-auto"
               >
                 <ExternalLink className="h-3.5 w-3.5" />
                 {t.projects.liveDemo}
@@ -178,7 +178,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
                 href={project.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs text-muted hover:text-text transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs text-muted hover:text-text transition-colors pointer-events-auto"
               >
                 <GithubIcon className="h-3.5 w-3.5" />
                 GitHub
